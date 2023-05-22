@@ -1,0 +1,54 @@
+{
+  "name": "docker-build-push",
+  "description": "Build and push Docker images",
+  "main": "lib/main.js",
+  "scripts": {
+    "build": "tsc && ncc build",
+    "format": "prettier --write **/*.ts",
+    "format-check": "prettier --check **/*.ts",
+    "test": "jest --coverage",
+    "pre-checkin": "yarn run format && yarn run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/docker/build-push-action.git"
+  },
+  "keywords": [
+    "actions",
+    "docker",
+    "build",
+    "push"
+  ],
+  "author": "Docker",
+  "contributors": [
+    {
+      "name": "CrazyMax",
+      "url": "https://crazymax.dev"
+    }
+  ],
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@actions/core": "^1.6.0",
+    "@actions/exec": "^1.1.0",
+    "@actions/github": "^5.0.0",
+    "csv-parse": "^4.16.3",
+    "handlebars": "^4.7.7",
+    "semver": "^7.3.5",
+    "tmp": "^0.2.1"
+  },
+  "devDependencies": {
+    "@types/csv-parse": "^1.2.2",
+    "@types/jest": "^26.0.23",
+    "@types/node": "^14.17.4",
+    "@types/tmp": "^0.2.0",
+    "@vercel/ncc": "^0.28.6",
+    "dotenv": "^8.6.0",
+    "jest": "^26.6.3",
+    "jest-circus": "^26.6.3",
+    "jest-runtime": "^26.6.3",
+    "prettier": "^2.3.1",
+    "ts-jest": "^26.5.6",
+    "typescript": "^4.3.4",
+    "typescript-formatter": "^7.2.2"
+  }
+}

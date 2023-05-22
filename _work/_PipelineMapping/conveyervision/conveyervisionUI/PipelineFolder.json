@@ -1,0 +1,12 @@
+﻿{
+  "repositoryName": "conveyervision/conveyervisionUI",
+  "pipelineDirectory": "conveyervisionUI",
+  "workspaceDirectory": "conveyervisionUI/conveyervisionUI",
+  "repositories": {
+    "conveyervision/conveyervisionUI": {
+      "repositoryPath": "conveyervisionUI/conveyervisionUI",
+      "lastRunOn": "05/21/2023 21:14:16 -04:00"
+    }
+  },
+  "lastRunOn": "05/21/2023 21:59:03 -04:00"
+}

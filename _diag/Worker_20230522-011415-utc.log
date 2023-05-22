@@ -1,0 +1,4896 @@
+[2023-05-22 01:14:15Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2023-05-22 01:14:15Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:15Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:15Z INFO HostContext] Well known config file 'Credentials': '/home/saad/git/bytevision/githubactions-runner/.credentials'
+[2023-05-22 01:14:15Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:15Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:15Z INFO HostContext] Well known config file 'Runner': '/home/saad/git/bytevision/githubactions-runner/.runner'
+[2023-05-22 01:14:15Z INFO Worker] Version: 2.304.0
+[2023-05-22 01:14:15Z INFO Worker] Commit: 9ef4121b5b31ee5c03b7770288213d741081f747
+[2023-05-22 01:14:15Z INFO Worker] Culture: en-US
+[2023-05-22 01:14:15Z INFO Worker] UI Culture: en-US
+[2023-05-22 01:14:15Z INFO Worker] Waiting to receive the job message from the channel.
+[2023-05-22 01:14:15Z INFO ProcessChannel] Receiving message of length 23291, with hash 'abda2a933b06dee386037eca4b7488ca4c5cb1e5cdce618a1cd92f8109f08f49'
+[2023-05-22 01:14:15Z INFO Worker] Message received.
+[2023-05-22 01:14:15Z INFO Worker] Job message:
+ {
+  "fileTable": [
+    ".github/workflows/ci.yml"
+  ],
+  "mask": [
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    }
+  ],
+  "steps": [
+    {
+      "type": "action",
+      "reference": {
+        "type": "repository",
+        "name": "actions/checkout",
+        "ref": "v2",
+        "repositoryType": "GitHub",
+        "path": ""
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 13,
+        "col": 13,
+        "lit": "Check out repository"
+      },
+      "contextName": "__actions_checkout",
+      "condition": "success()",
+      "id": "4f6c64a7-9a6d-508d-38c4-ee231df2e94d",
+      "name": "__actions_checkout"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "repository",
+        "name": "docker/login-action",
+        "ref": "v1",
+        "repositoryType": "GitHub",
+        "path": ""
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 16,
+        "col": 13,
+        "lit": "Login to Docker registry"
+      },
+      "contextName": "__docker_login-action",
+      "inputs": {
+        "type": 2,
+        "file": 1,
+        "line": 19,
+        "col": 9,
+        "map": [
+          {
+            "key": {
+              "type": 0,
+              "file": 1,
+              "line": 19,
+              "col": 9,
+              "lit": "registry"
+            },
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 19,
+              "col": 19,
+              "lit": "docker.gensosekai.com"
+            }
+          },
+          {
+            "key": {
+              "type": 0,
+              "file": 1,
+              "line": 20,
+              "col": 9,
+              "lit": "username"
+            },
+            "value": {
+              "type": 3,
+              "file": 1,
+              "line": 20,
+              "col": 19,
+              "expr": "secrets.REGISTRY_USERNAME"
+            }
+          },
+          {
+            "key": {
+              "type": 0,
+              "file": 1,
+              "line": 21,
+              "col": 9,
+              "lit": "password"
+            },
+            "value": {
+              "type": 3,
+              "file": 1,
+              "line": 21,
+              "col": 19,
+              "expr": "secrets.REGISTRY_PASSWORD"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "cd814600-373f-5877-ac3c-6bf0127d9047",
+      "name": "__docker_login-action"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "repository",
+        "name": "docker/build-push-action",
+        "ref": "v2",
+        "repositoryType": "GitHub",
+        "path": ""
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 23,
+        "col": 13,
+        "lit": "Build and push Docker image"
+      },
+      "contextName": "__docker_build-push-action",
+      "inputs": {
+        "type": 2,
+        "file": 1,
+        "line": 26,
+        "col": 9,
+        "map": [
+          {
+            "key": {
+              "type": 0,
+              "file": 1,
+              "line": 26,
+              "col": 9,
+              "lit": "context"
+            },
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 26,
+              "col": 18,
+              "lit": "."
+            }
+          },
+          {
+            "key": {
+              "type": 0,
+              "file": 1,
+              "line": 27,
+              "col": 9,
+              "lit": "push"
+            },
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 27,
+              "col": 15,
+              "lit": "true"
+            }
+          },
+          {
+            "key": {
+              "type": 0,
+              "file": 1,
+              "line": 28,
+              "col": 9,
+              "lit": "tags"
+            },
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 28,
+              "col": 15,
+              "lit": "docker.gensosekai.com/cv:latest"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "8957de05-e134-5a72-57ac-df1ddef1a94f",
+      "name": "__docker_build-push-action"
+    }
+  ],
+  "variables": {
+    "REGISTRY_PASSWORD": {
+      "value": "***",
+      "isSecret": true
+    },
+    "REGISTRY_USERNAME": {
+      "value": "***",
+      "isSecret": true
+    },
+    "system.isScheduled": {
+      "value": "False"
+    },
+    "system.servertype": {
+      "value": "Hosted"
+    },
+    "system.culture": {
+      "value": ""
+    },
+    "system.pipelineStartTime": {
+      "value": "2023-05-22 01:14:11+00:00"
+    },
+    "system.runner.lowdiskspacethreshold": {
+      "value": "100"
+    },
+    "DistributedTask.NewActionMetadata": {
+      "value": "true"
+    },
+    "DistributedTask.EnableCompositeActions": {
+      "value": "true"
+    },
+    "DistributedTask.EnhancedAnnotations": {
+      "value": "true"
+    },
+    "DistributedTask.UploadStepSummary": {
+      "value": "true"
+    },
+    "DistributedTask.AddWarningToNode12Action": {
+      "value": "true"
+    },
+    "DistributedTask.AllowRunnerContainerHooks": {
+      "value": "true"
+    },
+    "DistributedTask.DeprecateStepOutputCommands": {
+      "value": "true"
+    },
+    "system.teamProjectId": {
+      "value": "00000000-0000-0000-0000-000000000000"
+    },
+    "build.buildId": {
+      "value": "1"
+    },
+    "build.containerId": {
+      "value": "2770654"
+    },
+    "system.workflowFilePath": {
+      "value": ".github/workflows/ci.yml"
+    },
+    "system.phaseDisplayName": {
+      "value": "build-and-push"
+    },
+    "system.phaseId": {
+      "value": "862ffaca-2169-5194-fe92-36b327546b73"
+    },
+    "system.phaseName": {
+      "value": "build-and-push"
+    },
+    "system.phaseAttempt": {
+      "value": "1"
+    },
+    "system.jobIdentifier": {
+      "value": "build-and-push.__default"
+    },
+    "system.jobAttempt": {
+      "value": "1"
+    },
+    "System.JobPositionInPhase": {
+      "value": "1"
+    },
+    "System.TotalJobsInPhase": {
+      "value": "1"
+    },
+    "system.github.job": {
+      "value": "build-and-push"
+    },
+    "system.jobDisplayName": {
+      "value": "build-and-push"
+    },
+    "system.jobId": {
+      "value": "cc9a95ae-b53c-5dc6-d946-f5dd67afb660"
+    },
+    "system.jobName": {
+      "value": "__default"
+    },
+    "system.github.token.permissions": {
+      "value": "{\"Contents\":\"read\",\"Metadata\":\"read\",\"Packages\":\"read\"}"
+    },
+    "system.github.token": {
+      "value": "***",
+      "isSecret": true
+    },
+    "system.orchestrationId": {
+      "value": "4f6ff4bc-75b2-48a2-984b-2054bf2a6aa9.build-and-push.__default"
+    },
+    "system.runnerGroupName": {
+      "value": "Default"
+    }
+  },
+  "messageType": "PipelineAgentJobRequest",
+  "plan": {
+    "scopeIdentifier": "00000000-0000-0000-0000-000000000000",
+    "planType": "Actions",
+    "version": 31,
+    "planId": "4f6ff4bc-75b2-48a2-984b-2054bf2a6aa9",
+    "planGroup": "Actions:00000000-0000-0000-0000-000000000000:1",
+    "artifactUri": "vstfs:///Build/Build/1",
+    "artifactLocation": null,
+    "definition": {
+      "_links": {},
+      "id": 3,
+      "name": "conveyervisionUI"
+    },
+    "owner": {
+      "_links": {},
+      "id": 3,
+      "name": "conveyervision"
+    }
+  },
+  "timeline": {
+    "id": "4f6ff4bc-75b2-48a2-984b-2054bf2a6aa9",
+    "changeId": 0,
+    "location": null
+  },
+  "jobId": "cc9a95ae-b53c-5dc6-d946-f5dd67afb660",
+  "jobDisplayName": "build-and-push",
+  "jobName": "__default",
+  "requestId": 1,
+  "lockedUntil": "0001-01-01T00:00:00",
+  "resources": {
+    "endpoints": [
+      {
+        "data": {
+          "ServerId": "65537968-2bc7-4e43-8238-0987c20dd121",
+          "ServerName": "kOxegkYat6rFKDfdeJh1p2PO7AS64RmlyincLmdvkWhYeYBk2D",
+          "CacheServerUrl": "https://artifactcache.actions.githubusercontent.com/kOxegkYat6rFKDfdeJh1p2PO7AS64RmlyincLmdvkWhYeYBk2D/",
+          "FeedStreamUrl": "https://pipelines.actions.githubusercontent.com/kOxegkYat6rFKDfdeJh1p2PO7AS64RmlyincLmdvkWhYeYBk2D/00000000-0000-0000-0000-000000000000/_apis/distributedtask/hubs/Actions/plans/4f6ff4bc-75b2-48a2-984b-2054bf2a6aa9/timelines/4f6ff4bc-75b2-48a2-984b-2054bf2a6aa9/records/cc9a95ae-b53c-5dc6-d946-f5dd67afb660/feedstream?api-version=6.0-preview"
+        },
+        "name": "SystemVssConnection",
+        "url": "https://pipelines.actions.githubusercontent.com/kOxegkYat6rFKDfdeJh1p2PO7AS64RmlyincLmdvkWhYeYBk2D/",
+        "authorization": {
+          "parameters": {
+            "AccessToken": ***
+          },
+          "scheme": "OAuth"
+        },
+        "isShared": false,
+        "isReady": true
+      }
+    ]
+  },
+  "contextData": {
+    "github": {
+      "t": 2,
+      "d": [
+        {
+          "k": "ref",
+          "v": "refs/heads/main"
+        },
+        {
+          "k": "sha",
+          "v": "9f607e0a1c54d00f574b6f77f66834121b8ac1b9"
+        },
+        {
+          "k": "repository",
+          "v": "conveyervision/conveyervisionUI"
+        },
+        {
+          "k": "repository_owner",
+          "v": "conveyervision"
+        },
+        {
+          "k": "repository_owner_id",
+          "v": "134033423"
+        },
+        {
+          "k": "repositoryUrl",
+          "v": "git://github.com/conveyervision/conveyervisionUI.git"
+        },
+        {
+          "k": "run_id",
+          "v": "5040729803"
+        },
+        {
+          "k": "run_number",
+          "v": "2"
+        },
+        {
+          "k": "retention_days",
+          "v": "90"
+        },
+        {
+          "k": "run_attempt",
+          "v": "1"
+        },
+        {
+          "k": "artifact_cache_size_limit",
+          "v": "10"
+        },
+        {
+          "k": "repository_visibility",
+          "v": "private"
+        },
+        {
+          "k": "repository_id",
+          "v": "642663288"
+        },
+        {
+          "k": "actor_id",
+          "v": "97918375"
+        },
+        {
+          "k": "actor",
+          "v": "saadimalik211"
+        },
+        {
+          "k": "triggering_actor",
+          "v": "saadimalik211"
+        },
+        {
+          "k": "workflow",
+          "v": "CI"
+        },
+        {
+          "k": "head_ref",
+          "v": ""
+        },
+        {
+          "k": "base_ref",
+          "v": ""
+        },
+        {
+          "k": "event_name",
+          "v": "push"
+        },
+        {
+          "k": "event",
+          "v": {
+            "t": 2,
+            "d": [
+              {
+                "k": "after",
+                "v": "9f607e0a1c54d00f574b6f77f66834121b8ac1b9"
+              },
+              {
+                "k": "base_ref",
+                "v": null
+              },
+              {
+                "k": "before",
+                "v": "26ecc4bdc79ccd16c43fc035df5bbf526a1d75c1"
+              },
+              {
+                "k": "commits",
+                "v": {
+                  "t": 1,
+                  "a": [
+                    {
+                      "t": 2,
+                      "d": [
+                        {
+                          "k": "author",
+                          "v": {
+                            "t": 2,
+                            "d": [
+                              {
+                                "k": "email",
+                                "v": "97918375+saadimalik211@users.noreply.github.com"
+                              },
+                              {
+                                "k": "name",
+                                "v": "saadimalik211"
+                              },
+                              {
+                                "k": "username",
+                                "v": "saadimalik211"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "k": "committer",
+                          "v": {
+                            "t": 2,
+                            "d": [
+                              {
+                                "k": "email",
+                                "v": "noreply@github.com"
+                              },
+                              {
+                                "k": "name",
+                                "v": "GitHub"
+                              },
+                              {
+                                "k": "username",
+                                "v": "web-flow"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "k": "distinct",
+                          "v": true
+                        },
+                        {
+                          "k": "id",
+                          "v": "9f607e0a1c54d00f574b6f77f66834121b8ac1b9"
+                        },
+                        {
+                          "k": "message",
+                          "v": "testing ci"
+                        },
+                        {
+                          "k": "timestamp",
+                          "v": "2023-05-21T21:14:07-04:00"
+                        },
+                        {
+                          "k": "tree_id",
+                          "v": "01c92fb1dd761f6d866a745607a032de23283528"
+                        },
+                        {
+                          "k": "url",
+                          "v": "https://github.com/conveyervision/conveyervisionUI/commit/9f607e0a1c54d00f574b6f77f66834121b8ac1b9"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "compare",
+                "v": "https://github.com/conveyervision/conveyervisionUI/compare/26ecc4bdc79c...9f607e0a1c54"
+              },
+              {
+                "k": "created",
+                "v": false
+              },
+              {
+                "k": "deleted",
+                "v": false
+              },
+              {
+                "k": "forced",
+                "v": false
+              },
+              {
+                "k": "head_commit",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "author",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "email",
+                            "v": "97918375+saadimalik211@users.noreply.github.com"
+                          },
+                          {
+                            "k": "name",
+                            "v": "saadimalik211"
+                          },
+                          {
+                            "k": "username",
+                            "v": "saadimalik211"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "committer",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "email",
+                            "v": "noreply@github.com"
+                          },
+                          {
+                            "k": "name",
+                            "v": "GitHub"
+                          },
+                          {
+                            "k": "username",
+                            "v": "web-flow"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "distinct",
+                      "v": true
+                    },
+                    {
+                      "k": "id",
+                      "v": "9f607e0a1c54d00f574b6f77f66834121b8ac1b9"
+                    },
+                    {
+                      "k": "message",
+                      "v": "testing ci"
+                    },
+                    {
+                      "k": "timestamp",
+                      "v": "2023-05-21T21:14:07-04:00"
+                    },
+                    {
+                      "k": "tree_id",
+                      "v": "01c92fb1dd761f6d866a745607a032de23283528"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://github.com/conveyervision/conveyervisionUI/commit/9f607e0a1c54d00f574b6f77f66834121b8ac1b9"
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "organization",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "avatar_url",
+                      "v": "https://avatars.githubusercontent.com/u/134033423?v=4"
+                    },
+                    {
+                      "k": "description",
+                      "v": null
+                    },
+                    {
+                      "k": "events_url",
+                      "v": "https://api.github.com/orgs/conveyervision/events"
+                    },
+                    {
+                      "k": "hooks_url",
+                      "v": "https://api.github.com/orgs/conveyervision/hooks"
+                    },
+                    {
+                      "k": "id",
+                      "v": 134033423.0
+                    },
+                    {
+                      "k": "issues_url",
+                      "v": "https://api.github.com/orgs/conveyervision/issues"
+                    },
+                    {
+                      "k": "login",
+                      "v": "conveyervision"
+                    },
+                    {
+                      "k": "members_url",
+                      "v": "https://api.github.com/orgs/conveyervision/members{/member}"
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "O_kgDOB_0wDw"
+                    },
+                    {
+                      "k": "public_members_url",
+                      "v": "https://api.github.com/orgs/conveyervision/public_members{/member}"
+                    },
+                    {
+                      "k": "repos_url",
+                      "v": "https://api.github.com/orgs/conveyervision/repos"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://api.github.com/orgs/conveyervision"
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "pusher",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "email",
+                      "v": "97918375+saadimalik211@users.noreply.github.com"
+                    },
+                    {
+                      "k": "name",
+                      "v": "saadimalik211"
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "ref",
+                "v": "refs/heads/main"
+              },
+              {
+                "k": "repository",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "allow_forking",
+                      "v": false
+                    },
+                    {
+                      "k": "archive_url",
+                      "v": "https://api.github.com/repos/conveyervision/conveyervisionUI/{archive_format}{/ref}"
+                    },
+                    {
+                      "k": "archived",
+                      "v": false
+                    },
+                    {
+                      "k": "assignees_url",
+                      "v": "https://api.github.com/repos/conveyervision/conveyervisionUI/assignees{/user}"
+                    },
+                    {
+                      "k": "blobs_url",
+                      "v": "https://api.github.com/repos/conveyervision/conveyervisionUI/git/blobs{/sha}"
+                    },
+                    {
+                      "k": "branches_url",
+                      "v": "https://api.github.com/repos/conveyervision/conveyervisionUI/branches{/branch}"
+                    },
+                    {
+                      "k": "clone_url",
+                      "v": "https://github.com/conveyervision/conveyervisionUI.git"
+                    },
+                    {
+                      "k": "collaborators_url",
+                      "v": "https://api.github.com/repos/conveyervision/conveyervisionUI/collaborators{/collaborator}"
+                    },
+                    {
+                      "k": "comments_url",
+                      "v": "https://api.github.com/repos/conveyervision/conveyervisionUI/comments{/number}"
+                    },
+                    {
+                      "k": "commits_url",
+                      "v": "https://api.github.com/repos/conveyervision/conveyervisionUI/commits{/sha}"
+                    },
+                    {
+                      "k": "compare_url",
+                      "v": "https://api.github.com/repos/conveyervision/conveyervisionUI/compare/{base}...{head}"
+                    },
+                    {
+                      "k": "contents_url",
+                      "v": "https://api.github.com/repos/conveyervision/conveyervisionUI/contents/{+path}"
+                    },
+                    {
+                      "k": "contributors_url",
+                      "v": "https://api.github.com/repos/conveyervision/conveyervisionUI/contributors"
+                    },
+                    {
+                      "k": "created_at",
+                      "v": 1684470619.0
+                    },
+                    {
+                      "k": "default_branch",
+                      "v": "main"
+                    },
+                    {
+                      "k": "deployments_url",
+                      "v": "https://api.github.com/repos/conveyervision/conveyervisionUI/deployments"
+                    },
+                    {
+                      "k": "description",
+                      "v": null
+                    },
+                    {
+                      "k": "disabled",
+                      "v": false
+                    },
+                    {
+                      "k": "downloads_url",
+                      "v": "https://api.github.com/repos/conveyervision/conveyervisionUI/downloads"
+                    },
+                    {
+                      "k": "events_url",
+                      "v": "https://api.github.com/repos/conveyervision/conveyervisionUI/events"
+                    },
+                    {
+                      "k": "fork",
+                      "v": false
+                    },
+                    {
+                      "k": "forks",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "forks_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "forks_url",
+                      "v": "https://api.github.com/repos/conveyervision/conveyervisionUI/forks"
+                    },
+                    {
+                      "k": "full_name",
+                      "v": "conveyervision/conveyervisionUI"
+                    },
+                    {
+                      "k": "git_commits_url",
+                      "v": "https://api.github.com/repos/conveyervision/conveyervisionUI/git/commits{/sha}"
+                    },
+                    {
+                      "k": "git_refs_url",
+                      "v": "https://api.github.com/repos/conveyervision/conveyervisionUI/git/refs{/sha}"
+                    },
+                    {
+                      "k": "git_tags_url",
+                      "v": "https://api.github.com/repos/conveyervision/conveyervisionUI/git/tags{/sha}"
+                    },
+                    {
+                      "k": "git_url",
+                      "v": "git://github.com/conveyervision/conveyervisionUI.git"
+                    },
+                    {
+                      "k": "has_discussions",
+                      "v": false
+                    },
+                    {
+                      "k": "has_downloads",
+                      "v": true
+                    },
+                    {
+                      "k": "has_issues",
+                      "v": true
+                    },
+                    {
+                      "k": "has_pages",
+                      "v": false
+                    },
+                    {
+                      "k": "has_projects",
+                      "v": true
+                    },
+                    {
+                      "k": "has_wiki",
+                      "v": false
+                    },
+                    {
+                      "k": "homepage",
+                      "v": null
+                    },
+                    {
+                      "k": "hooks_url",
+                      "v": "https://api.github.com/repos/conveyervision/conveyervisionUI/hooks"
+                    },
+                    {
+                      "k": "html_url",
+                      "v": "https://github.com/conveyervision/conveyervisionUI"
+                    },
+                    {
+                      "k": "id",
+                      "v": 642663288.0
+                    },
+                    {
+                      "k": "is_template",
+                      "v": false
+                    },
+                    {
+                      "k": "issue_comment_url",
+                      "v": "https://api.github.com/repos/conveyervision/conveyervisionUI/issues/comments{/number}"
+                    },
+                    {
+                      "k": "issue_events_url",
+                      "v": "https://api.github.com/repos/conveyervision/conveyervisionUI/issues/events{/number}"
+                    },
+                    {
+                      "k": "issues_url",
+                      "v": "https://api.github.com/repos/conveyervision/conveyervisionUI/issues{/number}"
+                    },
+                    {
+                      "k": "keys_url",
+                      "v": "https://api.github.com/repos/conveyervision/conveyervisionUI/keys{/key_id}"
+                    },
+                    {
+                      "k": "labels_url",
+                      "v": "https://api.github.com/repos/conveyervision/conveyervisionUI/labels{/name}"
+                    },
+                    {
+                      "k": "language",
+                      "v": "Python"
+                    },
+                    {
+                      "k": "languages_url",
+                      "v": "https://api.github.com/repos/conveyervision/conveyervisionUI/languages"
+                    },
+                    {
+                      "k": "license",
+                      "v": null
+                    },
+                    {
+                      "k": "master_branch",
+                      "v": "main"
+                    },
+                    {
+                      "k": "merges_url",
+                      "v": "https://api.github.com/repos/conveyervision/conveyervisionUI/merges"
+                    },
+                    {
+                      "k": "milestones_url",
+                      "v": "https://api.github.com/repos/conveyervision/conveyervisionUI/milestones{/number}"
+                    },
+                    {
+                      "k": "mirror_url",
+                      "v": null
+                    },
+                    {
+                      "k": "name",
+                      "v": "conveyervisionUI"
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "R_kgDOJk5DeA"
+                    },
+                    {
+                      "k": "notifications_url",
+                      "v": "https://api.github.com/repos/conveyervision/conveyervisionUI/notifications{?since,all,participating}"
+                    },
+                    {
+                      "k": "open_issues",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "open_issues_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "organization",
+                      "v": "conveyervision"
+                    },
+                    {
+                      "k": "owner",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "avatar_url",
+                            "v": "https://avatars.githubusercontent.com/u/134033423?v=4"
+                          },
+                          {
+                            "k": "email",
+                            "v": null
+                          },
+                          {
+                            "k": "events_url",
+                            "v": "https://api.github.com/users/conveyervision/events{/privacy}"
+                          },
+                          {
+                            "k": "followers_url",
+                            "v": "https://api.github.com/users/conveyervision/followers"
+                          },
+                          {
+                            "k": "following_url",
+                            "v": "https://api.github.com/users/conveyervision/following{/other_user}"
+                          },
+                          {
+                            "k": "gists_url",
+                            "v": "https://api.github.com/users/conveyervision/gists{/gist_id}"
+                          },
+                          {
+                            "k": "gravatar_id",
+                            "v": ""
+                          },
+                          {
+                            "k": "html_url",
+                            "v": "https://github.com/conveyervision"
+                          },
+                          {
+                            "k": "id",
+                            "v": 134033423.0
+                          },
+                          {
+                            "k": "login",
+                            "v": "conveyervision"
+                          },
+                          {
+                            "k": "name",
+                            "v": "conveyervision"
+                          },
+                          {
+                            "k": "node_id",
+                            "v": "O_kgDOB_0wDw"
+                          },
+                          {
+                            "k": "organizations_url",
+                            "v": "https://api.github.com/users/conveyervision/orgs"
+                          },
+                          {
+                            "k": "received_events_url",
+                            "v": "https://api.github.com/users/conveyervision/received_events"
+                          },
+                          {
+                            "k": "repos_url",
+                            "v": "https://api.github.com/users/conveyervision/repos"
+                          },
+                          {
+                            "k": "site_admin",
+                            "v": false
+                          },
+                          {
+                            "k": "starred_url",
+                            "v": "https://api.github.com/users/conveyervision/starred{/owner}{/repo}"
+                          },
+                          {
+                            "k": "subscriptions_url",
+                            "v": "https://api.github.com/users/conveyervision/subscriptions"
+                          },
+                          {
+                            "k": "type",
+                            "v": "Organization"
+                          },
+                          {
+                            "k": "url",
+                            "v": "https://api.github.com/users/conveyervision"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "private",
+                      "v": true
+                    },
+                    {
+                      "k": "pulls_url",
+                      "v": "https://api.github.com/repos/conveyervision/conveyervisionUI/pulls{/number}"
+                    },
+                    {
+                      "k": "pushed_at",
+                      "v": 1684718047.0
+                    },
+                    {
+                      "k": "releases_url",
+                      "v": "https://api.github.com/repos/conveyervision/conveyervisionUI/releases{/id}"
+                    },
+                    {
+                      "k": "size",
+                      "v": 24.0
+                    },
+                    {
+                      "k": "ssh_url",
+                      "v": "git@github.com:conveyervision/conveyervisionUI.git"
+                    },
+                    {
+                      "k": "stargazers",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "stargazers_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "stargazers_url",
+                      "v": "https://api.github.com/repos/conveyervision/conveyervisionUI/stargazers"
+                    },
+                    {
+                      "k": "statuses_url",
+                      "v": "https://api.github.com/repos/conveyervision/conveyervisionUI/statuses/{sha}"
+                    },
+                    {
+                      "k": "subscribers_url",
+                      "v": "https://api.github.com/repos/conveyervision/conveyervisionUI/subscribers"
+                    },
+                    {
+                      "k": "subscription_url",
+                      "v": "https://api.github.com/repos/conveyervision/conveyervisionUI/subscription"
+                    },
+                    {
+                      "k": "svn_url",
+                      "v": "https://github.com/conveyervision/conveyervisionUI"
+                    },
+                    {
+                      "k": "tags_url",
+                      "v": "https://api.github.com/repos/conveyervision/conveyervisionUI/tags"
+                    },
+                    {
+                      "k": "teams_url",
+                      "v": "https://api.github.com/repos/conveyervision/conveyervisionUI/teams"
+                    },
+                    {
+                      "k": "topics",
+                      "v": {
+                        "t": 1
+                      }
+                    },
+                    {
+                      "k": "trees_url",
+                      "v": "https://api.github.com/repos/conveyervision/conveyervisionUI/git/trees{/sha}"
+                    },
+                    {
+                      "k": "updated_at",
+                      "v": "2023-05-19T04:34:32Z"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://github.com/conveyervision/conveyervisionUI"
+                    },
+                    {
+                      "k": "visibility",
+                      "v": "private"
+                    },
+                    {
+                      "k": "watchers",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "watchers_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "web_commit_signoff_required",
+                      "v": false
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "sender",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "avatar_url",
+                      "v": "https://avatars.githubusercontent.com/u/97918375?v=4"
+                    },
+                    {
+                      "k": "events_url",
+                      "v": "https://api.github.com/users/saadimalik211/events{/privacy}"
+                    },
+                    {
+                      "k": "followers_url",
+                      "v": "https://api.github.com/users/saadimalik211/followers"
+                    },
+                    {
+                      "k": "following_url",
+                      "v": "https://api.github.com/users/saadimalik211/following{/other_user}"
+                    },
+                    {
+                      "k": "gists_url",
+                      "v": "https://api.github.com/users/saadimalik211/gists{/gist_id}"
+                    },
+                    {
+                      "k": "gravatar_id",
+                      "v": ""
+                    },
+                    {
+                      "k": "html_url",
+                      "v": "https://github.com/saadimalik211"
+                    },
+                    {
+                      "k": "id",
+                      "v": 97918375.0
+                    },
+                    {
+                      "k": "login",
+                      "v": "saadimalik211"
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "U_kgDOBdYdpw"
+                    },
+                    {
+                      "k": "organizations_url",
+                      "v": "https://api.github.com/users/saadimalik211/orgs"
+                    },
+                    {
+                      "k": "received_events_url",
+                      "v": "https://api.github.com/users/saadimalik211/received_events"
+                    },
+                    {
+                      "k": "repos_url",
+                      "v": "https://api.github.com/users/saadimalik211/repos"
+                    },
+                    {
+                      "k": "site_admin",
+                      "v": false
+                    },
+                    {
+                      "k": "starred_url",
+                      "v": "https://api.github.com/users/saadimalik211/starred{/owner}{/repo}"
+                    },
+                    {
+                      "k": "subscriptions_url",
+                      "v": "https://api.github.com/users/saadimalik211/subscriptions"
+                    },
+                    {
+                      "k": "type",
+                      "v": "User"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://api.github.com/users/saadimalik211"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "k": "server_url",
+          "v": "https://github.com"
+        },
+        {
+          "k": "api_url",
+          "v": "https://api.github.com"
+        },
+        {
+          "k": "graphql_url",
+          "v": "https://api.github.com/graphql"
+        },
+        {
+          "k": "ref_name",
+          "v": "main"
+        },
+        {
+          "k": "ref_protected",
+          "v": false
+        },
+        {
+          "k": "ref_type",
+          "v": "branch"
+        },
+        {
+          "k": "secret_source",
+          "v": "Actions"
+        },
+        {
+          "k": "workflow_ref",
+          "v": "conveyervision/conveyervisionUI/.github/workflows/ci.yml@refs/heads/main"
+        },
+        {
+          "k": "workflow_sha",
+          "v": "9f607e0a1c54d00f574b6f77f66834121b8ac1b9"
+        }
+      ]
+    },
+    "partialrerun": false,
+    "needs": {
+      "t": 2
+    },
+    "vars": null,
+    "inputs": {
+      "t": 2
+    },
+    "matrix": null,
+    "strategy": {
+      "t": 2,
+      "d": [
+        {
+          "k": "fail-fast",
+          "v": true
+        },
+        {
+          "k": "job-index",
+          "v": 0.0
+        },
+        {
+          "k": "job-total",
+          "v": 1.0
+        },
+        {
+          "k": "max-parallel",
+          "v": 1.0
+        }
+      ]
+    }
+  }
+}
+[2023-05-22 01:14:15Z INFO JobRunner] Job ID cc9a95ae-b53c-5dc6-d946-f5dd67afb660
+[2023-05-22 01:14:15Z INFO JobRunner] Creating job server with URL: https://pipelines.actions.githubusercontent.com/kOxegkYat6rFKDfdeJh1p2PO7AS64RmlyincLmdvkWhYeYBk2D/
+[2023-05-22 01:14:15Z INFO ConfigurationStore] currentAssemblyLocation: /home/saad/git/bytevision/githubactions-runner/bin/Runner.Worker.dll
+[2023-05-22 01:14:15Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:15Z INFO ConfigurationStore] binPath: /home/saad/git/bytevision/githubactions-runner/bin
+[2023-05-22 01:14:15Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:15Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:15Z INFO ConfigurationStore] RootFolder: /home/saad/git/bytevision/githubactions-runner
+[2023-05-22 01:14:15Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:15Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:15Z INFO HostContext] Well known config file 'Runner': '/home/saad/git/bytevision/githubactions-runner/.runner'
+[2023-05-22 01:14:15Z INFO ConfigurationStore] ConfigFilePath: /home/saad/git/bytevision/githubactions-runner/.runner
+[2023-05-22 01:14:15Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:15Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:15Z INFO HostContext] Well known config file 'Credentials': '/home/saad/git/bytevision/githubactions-runner/.credentials'
+[2023-05-22 01:14:15Z INFO ConfigurationStore] CredFilePath: /home/saad/git/bytevision/githubactions-runner/.credentials
+[2023-05-22 01:14:15Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:15Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:15Z INFO HostContext] Well known config file 'MigratedCredentials': '/home/saad/git/bytevision/githubactions-runner/.credentials_migrated'
+[2023-05-22 01:14:15Z INFO ConfigurationStore] MigratedCredFilePath: /home/saad/git/bytevision/githubactions-runner/.credentials_migrated
+[2023-05-22 01:14:15Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:15Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:15Z INFO HostContext] Well known config file 'Service': '/home/saad/git/bytevision/githubactions-runner/.service'
+[2023-05-22 01:14:15Z INFO ConfigurationStore] ServiceConfigFilePath: /home/saad/git/bytevision/githubactions-runner/.service
+[2023-05-22 01:14:15Z INFO ConfigurationStore] Read setting file: 281 chars
+[2023-05-22 01:14:15Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2023-05-22 01:14:15Z INFO Worker] Listening for cancel message from the channel.
+[2023-05-22 01:14:15Z INFO Worker] Waiting for the job to complete or for a cancel message from the channel.
+[2023-05-22 01:14:16Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2023-05-22 01:14:16Z INFO JobServer] Creating websocket client ...wss://pipelines.actions.githubusercontent.com/kOxegkYat6rFKDfdeJh1p2PO7AS64RmlyincLmdvkWhYeYBk2D/00000000-0000-0000-0000-000000000000/_apis/distributedtask/hubs/Actions/plans/4f6ff4bc-75b2-48a2-984b-2054bf2a6aa9/timelines/4f6ff4bc-75b2-48a2-984b-2054bf2a6aa9/records/cc9a95ae-b53c-5dc6-d946-f5dd67afb660/feedstream?api-version=6.0-preview
+[2023-05-22 01:14:16Z INFO JobServer] Attempting to start websocket client with delay 00:00:00.
+[2023-05-22 01:14:16Z INFO JobServerQueue] Start process web console line queue.
+[2023-05-22 01:14:16Z INFO JobServerQueue] Start process file upload queue.
+[2023-05-22 01:14:16Z INFO JobServerQueue] Start results file upload queue.
+[2023-05-22 01:14:16Z INFO JobServerQueue] Starting results-based upload queue...
+[2023-05-22 01:14:16Z INFO JobServerQueue] Start process timeline update queue.
+[2023-05-22 01:14:16Z INFO ExecutionContext] Initialize GitHub context
+[2023-05-22 01:14:16Z INFO ExecutionContext] Initialize Env context
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Diag': '/home/saad/git/bytevision/githubactions-runner/_diag'
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Diag': '/home/saad/git/bytevision/githubactions-runner/_diag'
+[2023-05-22 01:14:16Z INFO JobRunner] Starting the job execution context.
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:16Z INFO JobRunner] Validating directory permissions for: '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Tools': '/home/saad/git/bytevision/githubactions-runner/_work/_tool'
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Temp': '/home/saad/git/bytevision/githubactions-runner/_work/_temp'
+[2023-05-22 01:14:16Z INFO JobRunner] Getting job extension.
+[2023-05-22 01:14:16Z INFO JobRunner] Initialize job. Getting all job steps.
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Diag': '/home/saad/git/bytevision/githubactions-runner/_diag'
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Diag': '/home/saad/git/bytevision/githubactions-runner/_diag'
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:16Z INFO HostContext] Well known config file 'Credentials': '/home/saad/git/bytevision/githubactions-runner/.credentials'
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:16Z INFO HostContext] Well known config file 'SetupInfo': '/home/saad/git/bytevision/githubactions-runner/.setup_info'
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:16Z INFO PipelineDirectoryManager] Loading tracking config if exists: /home/saad/git/bytevision/githubactions-runner/_work/_PipelineMapping/conveyervision/conveyervisionUI/PipelineFolder.json
+[2023-05-22 01:14:16Z INFO PipelineDirectoryManager] Creating a new tracking config file.
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:16Z INFO PipelineDirectoryManager] Creating pipeline directory.
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:16Z INFO PipelineDirectoryManager] Creating workspace directory.
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:16Z INFO JobExtension] Downloading actions
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Actions': '/home/saad/git/bytevision/githubactions-runner/_work/_actions'
+[2023-05-22 01:14:16Z INFO JobServer] Successfully started websocket client.
+[2023-05-22 01:14:16Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'aef06657-4f04-45ca-862e-81ef4e896f19', success rate: 1/1.
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Actions': '/home/saad/git/bytevision/githubactions-runner/_work/_actions'
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:16Z INFO HostContext] Well known directory 'Actions': '/home/saad/git/bytevision/githubactions-runner/_work/_actions'
+[2023-05-22 01:14:16Z INFO ActionManager] Save archive 'https://api.github.com/repos/actions/checkout/tarball/ee0669bd1cc54295c223e0bb666b733df41de1c5' into /home/saad/git/bytevision/githubactions-runner/_work/_actions/_temp_01aa572b-ea7a-427a-8540-eb5907c91bfc/241fabcc-9214-4170-b952-0974ee179f2e.tar.gz.
+[2023-05-22 01:14:17Z INFO JobServerQueue] Job timeline record has been updated for the first time.
+[2023-05-22 01:14:17Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'aef06657-4f04-45ca-862e-81ef4e896f19', success rate: 1/1.
+[2023-05-22 01:14:17Z INFO ActionManager] Which: 'tar'
+[2023-05-22 01:14:17Z INFO ActionManager] Location: '/usr/bin/tar'
+[2023-05-22 01:14:17Z INFO ProcessInvokerWrapper] Starting process:
+[2023-05-22 01:14:17Z INFO ProcessInvokerWrapper]   File name: '/usr/bin/tar'
+[2023-05-22 01:14:17Z INFO ProcessInvokerWrapper]   Arguments: '-xzf "/home/saad/git/bytevision/githubactions-runner/_work/_actions/_temp_01aa572b-ea7a-427a-8540-eb5907c91bfc/241fabcc-9214-4170-b952-0974ee179f2e.tar.gz"'
+[2023-05-22 01:14:17Z INFO ProcessInvokerWrapper]   Working directory: '/home/saad/git/bytevision/githubactions-runner/_work/_actions/_temp_01aa572b-ea7a-427a-8540-eb5907c91bfc/_staging'
+[2023-05-22 01:14:17Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2023-05-22 01:14:17Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2023-05-22 01:14:17Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2023-05-22 01:14:17Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2023-05-22 01:14:17Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2023-05-22 01:14:17Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2023-05-22 01:14:17Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2023-05-22 01:14:17Z INFO ProcessInvokerWrapper] Updated oom_score_adj to 500 for PID: 121673.
+[2023-05-22 01:14:17Z INFO ProcessInvokerWrapper] Process started with process id 121673, waiting for process exit.
+[2023-05-22 01:14:17Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-05-22 01:14:17Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-05-22 01:14:17Z INFO ProcessInvokerWrapper] Finished process 121673 with exit code 0, and elapsed time 00:00:00.0285068.
+[2023-05-22 01:14:17Z INFO ActionManager] Finished getting action repository.
+[2023-05-22 01:14:17Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:17Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:17Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:17Z INFO HostContext] Well known directory 'Actions': '/home/saad/git/bytevision/githubactions-runner/_work/_actions'
+[2023-05-22 01:14:17Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:17Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:17Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:17Z INFO HostContext] Well known directory 'Actions': '/home/saad/git/bytevision/githubactions-runner/_work/_actions'
+[2023-05-22 01:14:17Z INFO ActionManager] Save archive 'https://api.github.com/repos/docker/login-action/tarball/dd4fa0671be5250ee6f50aedf4cb05514abda2c7' into /home/saad/git/bytevision/githubactions-runner/_work/_actions/_temp_0a0ae741-ba57-44d2-886d-bdfe7aac44a1/35839940-92de-495d-a842-fbfadd162408.tar.gz.
+[2023-05-22 01:14:17Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'aef06657-4f04-45ca-862e-81ef4e896f19', success rate: 1/1.
+[2023-05-22 01:14:18Z INFO ActionManager] Which: 'tar'
+[2023-05-22 01:14:18Z INFO ActionManager] Location: '/usr/bin/tar'
+[2023-05-22 01:14:18Z INFO ProcessInvokerWrapper] Starting process:
+[2023-05-22 01:14:18Z INFO ProcessInvokerWrapper]   File name: '/usr/bin/tar'
+[2023-05-22 01:14:18Z INFO ProcessInvokerWrapper]   Arguments: '-xzf "/home/saad/git/bytevision/githubactions-runner/_work/_actions/_temp_0a0ae741-ba57-44d2-886d-bdfe7aac44a1/35839940-92de-495d-a842-fbfadd162408.tar.gz"'
+[2023-05-22 01:14:18Z INFO ProcessInvokerWrapper]   Working directory: '/home/saad/git/bytevision/githubactions-runner/_work/_actions/_temp_0a0ae741-ba57-44d2-886d-bdfe7aac44a1/_staging'
+[2023-05-22 01:14:18Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2023-05-22 01:14:18Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2023-05-22 01:14:18Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2023-05-22 01:14:18Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2023-05-22 01:14:18Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2023-05-22 01:14:18Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2023-05-22 01:14:18Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2023-05-22 01:14:18Z INFO ProcessInvokerWrapper] Updated oom_score_adj to 500 for PID: 121686.
+[2023-05-22 01:14:18Z INFO ProcessInvokerWrapper] Process started with process id 121686, waiting for process exit.
+[2023-05-22 01:14:18Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-05-22 01:14:18Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-05-22 01:14:18Z INFO ProcessInvokerWrapper] Finished process 121686 with exit code 0, and elapsed time 00:00:00.0153070.
+[2023-05-22 01:14:18Z INFO ActionManager] Finished getting action repository.
+[2023-05-22 01:14:18Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:18Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:18Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:18Z INFO HostContext] Well known directory 'Actions': '/home/saad/git/bytevision/githubactions-runner/_work/_actions'
+[2023-05-22 01:14:18Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:18Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:18Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:18Z INFO HostContext] Well known directory 'Actions': '/home/saad/git/bytevision/githubactions-runner/_work/_actions'
+[2023-05-22 01:14:18Z INFO ActionManager] Save archive 'https://api.github.com/repos/docker/build-push-action/tarball/ac9327eae2b366085ac7f6a2d02df8aa8ead720a' into /home/saad/git/bytevision/githubactions-runner/_work/_actions/_temp_e8d158d6-f206-4f9d-ba1f-c8e0f1f5c1e7/4b3e9d14-ec0a-4098-90f2-5387c8a620a8.tar.gz.
+[2023-05-22 01:14:18Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'aef06657-4f04-45ca-862e-81ef4e896f19', success rate: 1/1.
+[2023-05-22 01:14:18Z INFO ActionManager] Which: 'tar'
+[2023-05-22 01:14:18Z INFO ActionManager] Location: '/usr/bin/tar'
+[2023-05-22 01:14:18Z INFO ProcessInvokerWrapper] Starting process:
+[2023-05-22 01:14:18Z INFO ProcessInvokerWrapper]   File name: '/usr/bin/tar'
+[2023-05-22 01:14:18Z INFO ProcessInvokerWrapper]   Arguments: '-xzf "/home/saad/git/bytevision/githubactions-runner/_work/_actions/_temp_e8d158d6-f206-4f9d-ba1f-c8e0f1f5c1e7/4b3e9d14-ec0a-4098-90f2-5387c8a620a8.tar.gz"'
+[2023-05-22 01:14:18Z INFO ProcessInvokerWrapper]   Working directory: '/home/saad/git/bytevision/githubactions-runner/_work/_actions/_temp_e8d158d6-f206-4f9d-ba1f-c8e0f1f5c1e7/_staging'
+[2023-05-22 01:14:18Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2023-05-22 01:14:18Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2023-05-22 01:14:18Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2023-05-22 01:14:18Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2023-05-22 01:14:18Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2023-05-22 01:14:18Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2023-05-22 01:14:18Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2023-05-22 01:14:18Z INFO ProcessInvokerWrapper] Updated oom_score_adj to 500 for PID: 121688.
+[2023-05-22 01:14:18Z INFO ProcessInvokerWrapper] Process started with process id 121688, waiting for process exit.
+[2023-05-22 01:14:18Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-05-22 01:14:18Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-05-22 01:14:18Z INFO ProcessInvokerWrapper] Finished process 121688 with exit code 0, and elapsed time 00:00:00.0519700.
+[2023-05-22 01:14:18Z INFO ActionManager] Finished getting action repository.
+[2023-05-22 01:14:18Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:18Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:18Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:18Z INFO HostContext] Well known directory 'Actions': '/home/saad/git/bytevision/githubactions-runner/_work/_actions'
+[2023-05-22 01:14:18Z INFO ActionManifestManager] Load schema file with definitions: [
+  "null",
+  "boolean",
+  "number",
+  "string",
+  "sequence",
+  "mapping",
+  "any",
+  "action-root",
+  "inputs",
+  "input",
+  "outputs",
+  "output-definition",
+  "runs",
+  "container-runs",
+  "container-runs-args",
+  "container-runs-env",
+  "node-runs",
+  "plugin-runs",
+  "composite-runs",
+  "composite-steps",
+  "composite-step",
+  "run-step",
+  "uses-step",
+  "container-runs-context",
+  "output-value",
+  "input-default-context",
+  "non-empty-string",
+  "string-steps-context",
+  "boolean-steps-context",
+  "step-env",
+  "step-if",
+  "step-with"
+]
+[2023-05-22 01:14:18Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:18Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:18Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:18Z INFO HostContext] Well known directory 'Actions': '/home/saad/git/bytevision/githubactions-runner/_work/_actions'
+[2023-05-22 01:14:19Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 50,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 53,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 56,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 58,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 61,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 62,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 71,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "true"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node12",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2023-05-22 01:14:19Z INFO ActionManager] Action node.js file: dist/index.js, no more preparation.
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Actions': '/home/saad/git/bytevision/githubactions-runner/_work/_actions'
+[2023-05-22 01:14:19Z INFO ActionManager] Load action that reference repository from '/home/saad/git/bytevision/githubactions-runner/_work/_actions/actions/checkout/v2'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Actions': '/home/saad/git/bytevision/githubactions-runner/_work/_actions'
+[2023-05-22 01:14:19Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 50,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 53,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 56,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 58,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 61,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 62,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 71,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "true"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node12",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2023-05-22 01:14:19Z INFO ActionManager] Action pre node.js file: N/A.
+[2023-05-22 01:14:19Z INFO ActionManager] Action node.js file: dist/index.js.
+[2023-05-22 01:14:19Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Actions': '/home/saad/git/bytevision/githubactions-runner/_work/_actions'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Actions': '/home/saad/git/bytevision/githubactions-runner/_work/_actions'
+[2023-05-22 01:14:19Z INFO ActionManifestManager] Ignore action property author.
+[2023-05-22 01:14:19Z INFO ActionManifestManager] Ignore action property branding.
+[2023-05-22 01:14:19Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Docker Login",
+  "description": "GitHub Action to login against a Docker registry",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 10,
+          "col": 3,
+          "lit": "registry"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 13,
+          "col": 3,
+          "lit": "username"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 16,
+          "col": 3,
+          "lit": "password"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 19,
+          "col": 3,
+          "lit": "ecr"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 21,
+          "col": 14,
+          "lit": "auto"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 23,
+          "col": 3,
+          "lit": "logout"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 25,
+          "col": 14,
+          "lit": "true"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node12",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2023-05-22 01:14:19Z INFO ActionManager] Action node.js file: dist/index.js, no more preparation.
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Actions': '/home/saad/git/bytevision/githubactions-runner/_work/_actions'
+[2023-05-22 01:14:19Z INFO ActionManager] Load action that reference repository from '/home/saad/git/bytevision/githubactions-runner/_work/_actions/docker/login-action/v1'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Actions': '/home/saad/git/bytevision/githubactions-runner/_work/_actions'
+[2023-05-22 01:14:19Z INFO ActionManifestManager] Ignore action property author.
+[2023-05-22 01:14:19Z INFO ActionManifestManager] Ignore action property branding.
+[2023-05-22 01:14:19Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Docker Login",
+  "description": "GitHub Action to login against a Docker registry",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 10,
+          "col": 3,
+          "lit": "registry"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 13,
+          "col": 3,
+          "lit": "username"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 16,
+          "col": 3,
+          "lit": "password"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 19,
+          "col": 3,
+          "lit": "ecr"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 21,
+          "col": 14,
+          "lit": "auto"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 23,
+          "col": 3,
+          "lit": "logout"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 25,
+          "col": 14,
+          "lit": "true"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node12",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2023-05-22 01:14:19Z INFO ActionManager] Action pre node.js file: N/A.
+[2023-05-22 01:14:19Z INFO ActionManager] Action node.js file: dist/index.js.
+[2023-05-22 01:14:19Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Actions': '/home/saad/git/bytevision/githubactions-runner/_work/_actions'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Actions': '/home/saad/git/bytevision/githubactions-runner/_work/_actions'
+[2023-05-22 01:14:19Z INFO ActionManifestManager] Ignore action property author.
+[2023-05-22 01:14:19Z INFO ActionManifestManager] Ignore action property branding.
+[2023-05-22 01:14:19Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Build and push Docker images",
+  "description": "Build and push Docker images with Buildx",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 10,
+          "col": 3,
+          "lit": "add-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 13,
+          "col": 3,
+          "lit": "allow"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 16,
+          "col": 3,
+          "lit": "build-args"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 19,
+          "col": 3,
+          "lit": "build-contexts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 22,
+          "col": 3,
+          "lit": "builder"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 25,
+          "col": 3,
+          "lit": "cache-from"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 28,
+          "col": 3,
+          "lit": "cache-to"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 31,
+          "col": 3,
+          "lit": "cgroup-parent"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 34,
+          "col": 3,
+          "lit": "context"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 37,
+          "col": 3,
+          "lit": "file"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 40,
+          "col": 3,
+          "lit": "labels"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 43,
+          "col": 3,
+          "lit": "load"
+        },
+        "value": {
+          "type": 0,
+          "file": 4,
+          "line": 46,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 47,
+          "col": 3,
+          "lit": "network"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 50,
+          "col": 3,
+          "lit": "no-cache"
+        },
+        "value": {
+          "type": 0,
+          "file": 4,
+          "line": 53,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 54,
+          "col": 3,
+          "lit": "outputs"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 57,
+          "col": 3,
+          "lit": "platforms"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 60,
+          "col": 3,
+          "lit": "pull"
+        },
+        "value": {
+          "type": 0,
+          "file": 4,
+          "line": 63,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 64,
+          "col": 3,
+          "lit": "push"
+        },
+        "value": {
+          "type": 0,
+          "file": 4,
+          "line": 67,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 68,
+          "col": 3,
+          "lit": "secrets"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 71,
+          "col": 3,
+          "lit": "secret-files"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 74,
+          "col": 3,
+          "lit": "shm-size"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 77,
+          "col": 3,
+          "lit": "ssh"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 80,
+          "col": 3,
+          "lit": "tags"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 83,
+          "col": 3,
+          "lit": "target"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 86,
+          "col": 3,
+          "lit": "ulimit"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 89,
+          "col": 3,
+          "lit": "github-token"
+        },
+        "value": {
+          "type": 3,
+          "file": 4,
+          "line": 91,
+          "col": 14,
+          "expr": "github.token"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node12",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2023-05-22 01:14:19Z INFO ActionManager] Action node.js file: dist/index.js, no more preparation.
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Actions': '/home/saad/git/bytevision/githubactions-runner/_work/_actions'
+[2023-05-22 01:14:19Z INFO ActionManager] Load action that reference repository from '/home/saad/git/bytevision/githubactions-runner/_work/_actions/docker/build-push-action/v2'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Actions': '/home/saad/git/bytevision/githubactions-runner/_work/_actions'
+[2023-05-22 01:14:19Z INFO ActionManifestManager] Ignore action property author.
+[2023-05-22 01:14:19Z INFO ActionManifestManager] Ignore action property branding.
+[2023-05-22 01:14:19Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Build and push Docker images",
+  "description": "Build and push Docker images with Buildx",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 10,
+          "col": 3,
+          "lit": "add-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 13,
+          "col": 3,
+          "lit": "allow"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 16,
+          "col": 3,
+          "lit": "build-args"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 19,
+          "col": 3,
+          "lit": "build-contexts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 22,
+          "col": 3,
+          "lit": "builder"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 25,
+          "col": 3,
+          "lit": "cache-from"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 28,
+          "col": 3,
+          "lit": "cache-to"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 31,
+          "col": 3,
+          "lit": "cgroup-parent"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 34,
+          "col": 3,
+          "lit": "context"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 37,
+          "col": 3,
+          "lit": "file"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 40,
+          "col": 3,
+          "lit": "labels"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 43,
+          "col": 3,
+          "lit": "load"
+        },
+        "value": {
+          "type": 0,
+          "file": 4,
+          "line": 46,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 47,
+          "col": 3,
+          "lit": "network"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 50,
+          "col": 3,
+          "lit": "no-cache"
+        },
+        "value": {
+          "type": 0,
+          "file": 4,
+          "line": 53,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 54,
+          "col": 3,
+          "lit": "outputs"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 57,
+          "col": 3,
+          "lit": "platforms"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 60,
+          "col": 3,
+          "lit": "pull"
+        },
+        "value": {
+          "type": 0,
+          "file": 4,
+          "line": 63,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 64,
+          "col": 3,
+          "lit": "push"
+        },
+        "value": {
+          "type": 0,
+          "file": 4,
+          "line": 67,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 68,
+          "col": 3,
+          "lit": "secrets"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 71,
+          "col": 3,
+          "lit": "secret-files"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 74,
+          "col": 3,
+          "lit": "shm-size"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 77,
+          "col": 3,
+          "lit": "ssh"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 80,
+          "col": 3,
+          "lit": "tags"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 83,
+          "col": 3,
+          "lit": "target"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 86,
+          "col": 3,
+          "lit": "ulimit"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 89,
+          "col": 3,
+          "lit": "github-token"
+        },
+        "value": {
+          "type": 3,
+          "file": 4,
+          "line": 91,
+          "col": 14,
+          "expr": "github.token"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node12",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2023-05-22 01:14:19Z INFO ActionManager] Action pre node.js file: N/A.
+[2023-05-22 01:14:19Z INFO ActionManager] Action node.js file: dist/index.js.
+[2023-05-22 01:14:19Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2023-05-22 01:14:19Z INFO JobExtension] Adding .
+[2023-05-22 01:14:19Z INFO JobExtension] Adding .
+[2023-05-22 01:14:19Z INFO JobExtension] Adding .
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Diag': '/home/saad/git/bytevision/githubactions-runner/_diag'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Diag': '/home/saad/git/bytevision/githubactions-runner/_diag'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Diag': '/home/saad/git/bytevision/githubactions-runner/_diag'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Diag': '/home/saad/git/bytevision/githubactions-runner/_diag'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Diag': '/home/saad/git/bytevision/githubactions-runner/_diag'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Diag': '/home/saad/git/bytevision/githubactions-runner/_diag'
+[2023-05-22 01:14:19Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'aef06657-4f04-45ca-862e-81ef4e896f19', success rate: 1/1.
+[2023-05-22 01:14:19Z INFO JobExtension] Total accessible running process: 473.
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:19Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "setup_job",
+  "type": "runner",
+  "stage": "Pre",
+  "stepId": "aef06657-4f04-45ca-862e-81ef4e896f19",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 3,
+  "startTime": "2023-05-22T01:14:16.4557866Z",
+  "finishTime": "2023-05-22T01:14:19.2399863Z"
+}.
+[2023-05-22 01:14:19Z INFO JobRunner] Total job steps: 3.
+[2023-05-22 01:14:19Z INFO JobRunner] Run all job steps.
+[2023-05-22 01:14:19Z INFO StepsRunner] Processing step: DisplayName='Check out repository'
+[2023-05-22 01:14:19Z INFO StepsRunner] Evaluating: success()
+[2023-05-22 01:14:19Z INFO StepsRunner] Result: true
+[2023-05-22 01:14:19Z INFO StepsRunner] Starting the step.
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Actions': '/home/saad/git/bytevision/githubactions-runner/_work/_actions'
+[2023-05-22 01:14:19Z INFO ActionManager] Load action that reference repository from '/home/saad/git/bytevision/githubactions-runner/_work/_actions/actions/checkout/v2'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Actions': '/home/saad/git/bytevision/githubactions-runner/_work/_actions'
+[2023-05-22 01:14:19Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 50,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 53,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 56,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 58,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 61,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 62,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 71,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "true"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node12",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2023-05-22 01:14:19Z INFO ActionManager] Action pre node.js file: N/A.
+[2023-05-22 01:14:19Z INFO ActionManager] Action node.js file: dist/index.js.
+[2023-05-22 01:14:19Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2023-05-22 01:14:19Z INFO ExecutionContext] Reserve record order 5 to 8 for post job actions.
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Diag': '/home/saad/git/bytevision/githubactions-runner/_diag'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Diag': '/home/saad/git/bytevision/githubactions-runner/_diag'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Temp': '/home/saad/git/bytevision/githubactions-runner/_work/_temp'
+[2023-05-22 01:14:19Z INFO ExecutionContext] Write event payload to /home/saad/git/bytevision/githubactions-runner/_work/_temp/_github_workflow/event.json
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Temp': '/home/saad/git/bytevision/githubactions-runner/_work/_temp'
+[2023-05-22 01:14:19Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2023-05-22 01:14:19Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddPathFileCommand, Runner.Worker
+[2023-05-22 01:14:19Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetEnvFileCommand, Runner.Worker
+[2023-05-22 01:14:19Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.CreateStepSummaryCommand, Runner.Worker
+[2023-05-22 01:14:19Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SaveStateFileCommand, Runner.Worker
+[2023-05-22 01:14:19Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetOutputFileCommand, Runner.Worker
+[2023-05-22 01:14:19Z INFO ActionManifestManager] Input 'repository': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 6,
+  "col": 14,
+  "lit": "conveyervision/conveyervisionUI"
+}
+[2023-05-22 01:14:19Z INFO ActionManifestManager] Input 'ref': default value evaluate result: ""
+[2023-05-22 01:14:19Z INFO ActionManifestManager] Input 'token': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 24,
+  "col": 14,
+  "lit": "***"
+}
+[2023-05-22 01:14:19Z INFO ActionManifestManager] Input 'ssh-key': default value evaluate result: ""
+[2023-05-22 01:14:19Z INFO ActionManifestManager] Input 'ssh-known-hosts': default value evaluate result: ""
+[2023-05-22 01:14:19Z INFO ActionManifestManager] Input 'ssh-strict': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 47,
+  "col": 14,
+  "lit": "true"
+}
+[2023-05-22 01:14:19Z INFO ActionManifestManager] Input 'persist-credentials': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 50,
+  "col": 14,
+  "lit": "true"
+}
+[2023-05-22 01:14:19Z INFO ActionManifestManager] Input 'path': default value evaluate result: ""
+[2023-05-22 01:14:19Z INFO ActionManifestManager] Input 'clean': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 55,
+  "col": 14,
+  "lit": "true"
+}
+[2023-05-22 01:14:19Z INFO ActionManifestManager] Input 'fetch-depth': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 58,
+  "col": 14,
+  "lit": "1"
+}
+[2023-05-22 01:14:19Z INFO ActionManifestManager] Input 'lfs': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 61,
+  "col": 14,
+  "lit": "false"
+}
+[2023-05-22 01:14:19Z INFO ActionManifestManager] Input 'submodules': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 70,
+  "col": 14,
+  "lit": "false"
+}
+[2023-05-22 01:14:19Z INFO ActionManifestManager] Input 'set-safe-directory': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 73,
+  "col": 14,
+  "lit": "true"
+}
+[2023-05-22 01:14:19Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2023-05-22 01:14:19Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.InternalPluginSetRepoPathCommandExtension, Runner.Worker
+[2023-05-22 01:14:19Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetEnvCommandExtension, Runner.Worker
+[2023-05-22 01:14:19Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetOutputCommandExtension, Runner.Worker
+[2023-05-22 01:14:19Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SaveStateCommandExtension, Runner.Worker
+[2023-05-22 01:14:19Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddPathCommandExtension, Runner.Worker
+[2023-05-22 01:14:19Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddMaskCommandExtension, Runner.Worker
+[2023-05-22 01:14:19Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddMatcherCommandExtension, Runner.Worker
+[2023-05-22 01:14:19Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.RemoveMatcherCommandExtension, Runner.Worker
+[2023-05-22 01:14:19Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.WarningCommandExtension, Runner.Worker
+[2023-05-22 01:14:19Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.ErrorCommandExtension, Runner.Worker
+[2023-05-22 01:14:19Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.NoticeCommandExtension, Runner.Worker
+[2023-05-22 01:14:19Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.DebugCommandExtension, Runner.Worker
+[2023-05-22 01:14:19Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.GroupCommandExtension, Runner.Worker
+[2023-05-22 01:14:19Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.EndGroupCommandExtension, Runner.Worker
+[2023-05-22 01:14:19Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.EchoCommandExtension, Runner.Worker
+[2023-05-22 01:14:19Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2023-05-22 01:14:19Z INFO ActionCommandManager] Register action command extension for command set-env
+[2023-05-22 01:14:19Z INFO ActionCommandManager] Register action command extension for command set-output
+[2023-05-22 01:14:19Z INFO ActionCommandManager] Register action command extension for command save-state
+[2023-05-22 01:14:19Z INFO ActionCommandManager] Register action command extension for command add-path
+[2023-05-22 01:14:19Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2023-05-22 01:14:19Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2023-05-22 01:14:19Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2023-05-22 01:14:19Z INFO ActionCommandManager] Register action command extension for command warning
+[2023-05-22 01:14:19Z INFO ActionCommandManager] Register action command extension for command error
+[2023-05-22 01:14:19Z INFO ActionCommandManager] Register action command extension for command notice
+[2023-05-22 01:14:19Z INFO ActionCommandManager] Register action command extension for command debug
+[2023-05-22 01:14:19Z INFO ActionCommandManager] Register action command extension for command group
+[2023-05-22 01:14:19Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2023-05-22 01:14:19Z INFO ActionCommandManager] Register action command extension for command echo
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:19Z INFO HostContext] Well known directory 'Externals': '/home/saad/git/bytevision/githubactions-runner/externals'
+[2023-05-22 01:14:19Z INFO ProcessInvokerWrapper] Starting process:
+[2023-05-22 01:14:19Z INFO ProcessInvokerWrapper]   File name: '/home/saad/git/bytevision/githubactions-runner/externals/node12/bin/node'
+[2023-05-22 01:14:19Z INFO ProcessInvokerWrapper]   Arguments: '"/home/saad/git/bytevision/githubactions-runner/_work/_actions/actions/checkout/v2/dist/index.js"'
+[2023-05-22 01:14:19Z INFO ProcessInvokerWrapper]   Working directory: '/home/saad/git/bytevision/githubactions-runner/_work/conveyervisionUI/conveyervisionUI'
+[2023-05-22 01:14:19Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2023-05-22 01:14:19Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2023-05-22 01:14:19Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2023-05-22 01:14:19Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2023-05-22 01:14:19Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2023-05-22 01:14:19Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2023-05-22 01:14:19Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2023-05-22 01:14:19Z INFO ProcessInvokerWrapper] Updated oom_score_adj to 500 for PID: 121691.
+[2023-05-22 01:14:19Z INFO ProcessInvokerWrapper] Process started with process id 121691, waiting for process exit.
+[2023-05-22 01:14:19Z INFO JobServerQueue] Try to append 1 batches web console lines for record '4f6c64a7-9a6d-508d-38c4-ee231df2e94d', success rate: 1/1.
+[2023-05-22 01:14:19Z INFO AddMaskCommandExtension] Add new secret mask with length of 76
+[2023-05-22 01:14:19Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2023-05-22 01:14:19Z INFO JobServerQueue] Try to append 1 batches web console lines for record '4f6c64a7-9a6d-508d-38c4-ee231df2e94d', success rate: 1/1.
+[2023-05-22 01:14:20Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-05-22 01:14:20Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-05-22 01:14:20Z INFO ProcessInvokerWrapper] Finished process 121691 with exit code 0, and elapsed time 00:00:00.8043648.
+[2023-05-22 01:14:20Z INFO CreateStepSummaryCommand] Step Summary file (/home/saad/git/bytevision/githubactions-runner/_work/_temp/_runner_file_commands/step_summary_6d0df021-829f-4301-b039-5da33ee07e9d) is empty; skipping attachment upload
+[2023-05-22 01:14:20Z INFO StepsRunner] Step result: 
+[2023-05-22 01:14:20Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "actions/checkout",
+  "ref": "v2",
+  "type": "node12",
+  "stage": "Main",
+  "stepId": "4f6c64a7-9a6d-508d-38c4-ee231df2e94d",
+  "stepContextName": "__actions_checkout",
+  "hasPreStep": false,
+  "hasPostStep": true,
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 1,
+  "startTime": "2023-05-22T01:14:19.2651317Z",
+  "finishTime": "2023-05-22T01:14:20.2063658Z"
+}.
+[2023-05-22 01:14:20Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2023-05-22 01:14:20Z INFO StepsRunner] Current state: job state = ''
+[2023-05-22 01:14:20Z INFO StepsRunner] Processing step: DisplayName='Login to Docker registry'
+[2023-05-22 01:14:20Z INFO JobServerQueue] Try to append 1 batches web console lines for record '4f6c64a7-9a6d-508d-38c4-ee231df2e94d', success rate: 1/1.
+[2023-05-22 01:14:20Z INFO StepsRunner] Evaluating: success()
+[2023-05-22 01:14:20Z INFO StepsRunner] Result: true
+[2023-05-22 01:14:20Z INFO StepsRunner] Starting the step.
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Actions': '/home/saad/git/bytevision/githubactions-runner/_work/_actions'
+[2023-05-22 01:14:20Z INFO ActionManager] Load action that reference repository from '/home/saad/git/bytevision/githubactions-runner/_work/_actions/docker/login-action/v1'
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Actions': '/home/saad/git/bytevision/githubactions-runner/_work/_actions'
+[2023-05-22 01:14:20Z INFO ActionManifestManager] Ignore action property author.
+[2023-05-22 01:14:20Z INFO ActionManifestManager] Ignore action property branding.
+[2023-05-22 01:14:20Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Docker Login",
+  "description": "GitHub Action to login against a Docker registry",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 10,
+          "col": 3,
+          "lit": "registry"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 13,
+          "col": 3,
+          "lit": "username"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 16,
+          "col": 3,
+          "lit": "password"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 19,
+          "col": 3,
+          "lit": "ecr"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 21,
+          "col": 14,
+          "lit": "auto"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 23,
+          "col": 3,
+          "lit": "logout"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 25,
+          "col": 14,
+          "lit": "true"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node12",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2023-05-22 01:14:20Z INFO ActionManager] Action pre node.js file: N/A.
+[2023-05-22 01:14:20Z INFO ActionManager] Action node.js file: dist/index.js.
+[2023-05-22 01:14:20Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Diag': '/home/saad/git/bytevision/githubactions-runner/_diag'
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Diag': '/home/saad/git/bytevision/githubactions-runner/_diag'
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Temp': '/home/saad/git/bytevision/githubactions-runner/_work/_temp'
+[2023-05-22 01:14:20Z INFO ExecutionContext] Write event payload to /home/saad/git/bytevision/githubactions-runner/_work/_temp/_github_workflow/event.json
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Temp': '/home/saad/git/bytevision/githubactions-runner/_work/_temp'
+[2023-05-22 01:14:20Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2023-05-22 01:14:20Z INFO ActionManifestManager] Input 'ecr': default value evaluate result: {
+  "type": 0,
+  "file": 3,
+  "line": 21,
+  "col": 14,
+  "lit": "auto"
+}
+[2023-05-22 01:14:20Z INFO ActionManifestManager] Input 'logout': default value evaluate result: {
+  "type": 0,
+  "file": 3,
+  "line": 25,
+  "col": 14,
+  "lit": "true"
+}
+[2023-05-22 01:14:20Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2023-05-22 01:14:20Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2023-05-22 01:14:20Z INFO ActionCommandManager] Register action command extension for command set-env
+[2023-05-22 01:14:20Z INFO ActionCommandManager] Register action command extension for command set-output
+[2023-05-22 01:14:20Z INFO ActionCommandManager] Register action command extension for command save-state
+[2023-05-22 01:14:20Z INFO ActionCommandManager] Register action command extension for command add-path
+[2023-05-22 01:14:20Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2023-05-22 01:14:20Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2023-05-22 01:14:20Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2023-05-22 01:14:20Z INFO ActionCommandManager] Register action command extension for command warning
+[2023-05-22 01:14:20Z INFO ActionCommandManager] Register action command extension for command error
+[2023-05-22 01:14:20Z INFO ActionCommandManager] Register action command extension for command notice
+[2023-05-22 01:14:20Z INFO ActionCommandManager] Register action command extension for command debug
+[2023-05-22 01:14:20Z INFO ActionCommandManager] Register action command extension for command group
+[2023-05-22 01:14:20Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2023-05-22 01:14:20Z INFO ActionCommandManager] Register action command extension for command echo
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Externals': '/home/saad/git/bytevision/githubactions-runner/externals'
+[2023-05-22 01:14:20Z INFO ProcessInvokerWrapper] Starting process:
+[2023-05-22 01:14:20Z INFO ProcessInvokerWrapper]   File name: '/home/saad/git/bytevision/githubactions-runner/externals/node12/bin/node'
+[2023-05-22 01:14:20Z INFO ProcessInvokerWrapper]   Arguments: '"/home/saad/git/bytevision/githubactions-runner/_work/_actions/docker/login-action/v1/dist/index.js"'
+[2023-05-22 01:14:20Z INFO ProcessInvokerWrapper]   Working directory: '/home/saad/git/bytevision/githubactions-runner/_work/conveyervisionUI/conveyervisionUI'
+[2023-05-22 01:14:20Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2023-05-22 01:14:20Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2023-05-22 01:14:20Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2023-05-22 01:14:20Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2023-05-22 01:14:20Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2023-05-22 01:14:20Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2023-05-22 01:14:20Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2023-05-22 01:14:20Z INFO ProcessInvokerWrapper] Updated oom_score_adj to 500 for PID: 121794.
+[2023-05-22 01:14:20Z INFO ProcessInvokerWrapper] Process started with process id 121794, waiting for process exit.
+[2023-05-22 01:14:20Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'cd814600-373f-5877-ac3c-6bf0127d9047', success rate: 1/1.
+[2023-05-22 01:14:20Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-05-22 01:14:20Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-05-22 01:14:20Z INFO ProcessInvokerWrapper] Finished process 121794 with exit code 0, and elapsed time 00:00:00.5010728.
+[2023-05-22 01:14:20Z INFO CreateStepSummaryCommand] Step Summary file (/home/saad/git/bytevision/githubactions-runner/_work/_temp/_runner_file_commands/step_summary_cd197cba-3e8a-4f66-8617-18ad08bbdf47) is empty; skipping attachment upload
+[2023-05-22 01:14:20Z INFO StepsRunner] Step result: 
+[2023-05-22 01:14:20Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "docker/login-action",
+  "ref": "v1",
+  "type": "node12",
+  "stage": "Main",
+  "stepId": "cd814600-373f-5877-ac3c-6bf0127d9047",
+  "stepContextName": "__docker_login-action",
+  "hasPreStep": false,
+  "hasPostStep": true,
+  "result": "succeeded",
+  "errorMessages": [
+    "The `save-state` command is deprecated and will be disabled soon. Please upgrade to using Environment Files. For more information see: https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/",
+    "The `save-state` command is deprecated and will be disabled soon. Please upgrade to using Environment Files. For more information see: https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/",
+    "The `save-state` command is deprecated and will be disabled soon. Please upgrade to using Environment Files. For more information see: https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/"
+  ],
+  "executionTimeInSeconds": 1,
+  "startTime": "2023-05-22T01:14:20.2076099Z",
+  "finishTime": "2023-05-22T01:14:20.7266878Z"
+}.
+[2023-05-22 01:14:20Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2023-05-22 01:14:20Z INFO StepsRunner] Current state: job state = ''
+[2023-05-22 01:14:20Z INFO StepsRunner] Processing step: DisplayName='Build and push Docker image'
+[2023-05-22 01:14:20Z INFO StepsRunner] Evaluating: success()
+[2023-05-22 01:14:20Z INFO StepsRunner] Result: true
+[2023-05-22 01:14:20Z INFO StepsRunner] Starting the step.
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Actions': '/home/saad/git/bytevision/githubactions-runner/_work/_actions'
+[2023-05-22 01:14:20Z INFO ActionManager] Load action that reference repository from '/home/saad/git/bytevision/githubactions-runner/_work/_actions/docker/build-push-action/v2'
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Actions': '/home/saad/git/bytevision/githubactions-runner/_work/_actions'
+[2023-05-22 01:14:20Z INFO ActionManifestManager] Ignore action property author.
+[2023-05-22 01:14:20Z INFO ActionManifestManager] Ignore action property branding.
+[2023-05-22 01:14:20Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Build and push Docker images",
+  "description": "Build and push Docker images with Buildx",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 10,
+          "col": 3,
+          "lit": "add-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 13,
+          "col": 3,
+          "lit": "allow"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 16,
+          "col": 3,
+          "lit": "build-args"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 19,
+          "col": 3,
+          "lit": "build-contexts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 22,
+          "col": 3,
+          "lit": "builder"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 25,
+          "col": 3,
+          "lit": "cache-from"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 28,
+          "col": 3,
+          "lit": "cache-to"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 31,
+          "col": 3,
+          "lit": "cgroup-parent"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 34,
+          "col": 3,
+          "lit": "context"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 37,
+          "col": 3,
+          "lit": "file"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 40,
+          "col": 3,
+          "lit": "labels"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 43,
+          "col": 3,
+          "lit": "load"
+        },
+        "value": {
+          "type": 0,
+          "file": 4,
+          "line": 46,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 47,
+          "col": 3,
+          "lit": "network"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 50,
+          "col": 3,
+          "lit": "no-cache"
+        },
+        "value": {
+          "type": 0,
+          "file": 4,
+          "line": 53,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 54,
+          "col": 3,
+          "lit": "outputs"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 57,
+          "col": 3,
+          "lit": "platforms"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 60,
+          "col": 3,
+          "lit": "pull"
+        },
+        "value": {
+          "type": 0,
+          "file": 4,
+          "line": 63,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 64,
+          "col": 3,
+          "lit": "push"
+        },
+        "value": {
+          "type": 0,
+          "file": 4,
+          "line": 67,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 68,
+          "col": 3,
+          "lit": "secrets"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 71,
+          "col": 3,
+          "lit": "secret-files"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 74,
+          "col": 3,
+          "lit": "shm-size"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 77,
+          "col": 3,
+          "lit": "ssh"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 80,
+          "col": 3,
+          "lit": "tags"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 83,
+          "col": 3,
+          "lit": "target"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 86,
+          "col": 3,
+          "lit": "ulimit"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 89,
+          "col": 3,
+          "lit": "github-token"
+        },
+        "value": {
+          "type": 3,
+          "file": 4,
+          "line": 91,
+          "col": 14,
+          "expr": "github.token"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node12",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2023-05-22 01:14:20Z INFO ActionManager] Action pre node.js file: N/A.
+[2023-05-22 01:14:20Z INFO ActionManager] Action node.js file: dist/index.js.
+[2023-05-22 01:14:20Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Diag': '/home/saad/git/bytevision/githubactions-runner/_diag'
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Diag': '/home/saad/git/bytevision/githubactions-runner/_diag'
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Temp': '/home/saad/git/bytevision/githubactions-runner/_work/_temp'
+[2023-05-22 01:14:20Z INFO ExecutionContext] Write event payload to /home/saad/git/bytevision/githubactions-runner/_work/_temp/_github_workflow/event.json
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Temp': '/home/saad/git/bytevision/githubactions-runner/_work/_temp'
+[2023-05-22 01:14:20Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2023-05-22 01:14:20Z INFO ActionManifestManager] Input 'add-hosts': default value evaluate result: ""
+[2023-05-22 01:14:20Z INFO ActionManifestManager] Input 'allow': default value evaluate result: ""
+[2023-05-22 01:14:20Z INFO ActionManifestManager] Input 'build-args': default value evaluate result: ""
+[2023-05-22 01:14:20Z INFO ActionManifestManager] Input 'build-contexts': default value evaluate result: ""
+[2023-05-22 01:14:20Z INFO ActionManifestManager] Input 'builder': default value evaluate result: ""
+[2023-05-22 01:14:20Z INFO ActionManifestManager] Input 'cache-from': default value evaluate result: ""
+[2023-05-22 01:14:20Z INFO ActionManifestManager] Input 'cache-to': default value evaluate result: ""
+[2023-05-22 01:14:20Z INFO ActionManifestManager] Input 'cgroup-parent': default value evaluate result: ""
+[2023-05-22 01:14:20Z INFO ActionManifestManager] Input 'file': default value evaluate result: ""
+[2023-05-22 01:14:20Z INFO ActionManifestManager] Input 'labels': default value evaluate result: ""
+[2023-05-22 01:14:20Z INFO ActionManifestManager] Input 'load': default value evaluate result: {
+  "type": 0,
+  "file": 4,
+  "line": 46,
+  "col": 14,
+  "lit": "false"
+}
+[2023-05-22 01:14:20Z INFO ActionManifestManager] Input 'network': default value evaluate result: ""
+[2023-05-22 01:14:20Z INFO ActionManifestManager] Input 'no-cache': default value evaluate result: {
+  "type": 0,
+  "file": 4,
+  "line": 53,
+  "col": 14,
+  "lit": "false"
+}
+[2023-05-22 01:14:20Z INFO ActionManifestManager] Input 'outputs': default value evaluate result: ""
+[2023-05-22 01:14:20Z INFO ActionManifestManager] Input 'platforms': default value evaluate result: ""
+[2023-05-22 01:14:20Z INFO ActionManifestManager] Input 'pull': default value evaluate result: {
+  "type": 0,
+  "file": 4,
+  "line": 63,
+  "col": 14,
+  "lit": "false"
+}
+[2023-05-22 01:14:20Z INFO ActionManifestManager] Input 'secrets': default value evaluate result: ""
+[2023-05-22 01:14:20Z INFO ActionManifestManager] Input 'secret-files': default value evaluate result: ""
+[2023-05-22 01:14:20Z INFO ActionManifestManager] Input 'shm-size': default value evaluate result: ""
+[2023-05-22 01:14:20Z INFO ActionManifestManager] Input 'ssh': default value evaluate result: ""
+[2023-05-22 01:14:20Z INFO ActionManifestManager] Input 'target': default value evaluate result: ""
+[2023-05-22 01:14:20Z INFO ActionManifestManager] Input 'ulimit': default value evaluate result: ""
+[2023-05-22 01:14:20Z INFO ActionManifestManager] Input 'github-token': default value evaluate result: {
+  "type": 0,
+  "file": 4,
+  "line": 91,
+  "col": 14,
+  "lit": "***"
+}
+[2023-05-22 01:14:20Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2023-05-22 01:14:20Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2023-05-22 01:14:20Z INFO ActionCommandManager] Register action command extension for command set-env
+[2023-05-22 01:14:20Z INFO ActionCommandManager] Register action command extension for command set-output
+[2023-05-22 01:14:20Z INFO ActionCommandManager] Register action command extension for command save-state
+[2023-05-22 01:14:20Z INFO ActionCommandManager] Register action command extension for command add-path
+[2023-05-22 01:14:20Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2023-05-22 01:14:20Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2023-05-22 01:14:20Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2023-05-22 01:14:20Z INFO ActionCommandManager] Register action command extension for command warning
+[2023-05-22 01:14:20Z INFO ActionCommandManager] Register action command extension for command error
+[2023-05-22 01:14:20Z INFO ActionCommandManager] Register action command extension for command notice
+[2023-05-22 01:14:20Z INFO ActionCommandManager] Register action command extension for command debug
+[2023-05-22 01:14:20Z INFO ActionCommandManager] Register action command extension for command group
+[2023-05-22 01:14:20Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2023-05-22 01:14:20Z INFO ActionCommandManager] Register action command extension for command echo
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:20Z INFO HostContext] Well known directory 'Externals': '/home/saad/git/bytevision/githubactions-runner/externals'
+[2023-05-22 01:14:20Z INFO ProcessInvokerWrapper] Starting process:
+[2023-05-22 01:14:20Z INFO ProcessInvokerWrapper]   File name: '/home/saad/git/bytevision/githubactions-runner/externals/node12/bin/node'
+[2023-05-22 01:14:20Z INFO ProcessInvokerWrapper]   Arguments: '"/home/saad/git/bytevision/githubactions-runner/_work/_actions/docker/build-push-action/v2/dist/index.js"'
+[2023-05-22 01:14:20Z INFO ProcessInvokerWrapper]   Working directory: '/home/saad/git/bytevision/githubactions-runner/_work/conveyervisionUI/conveyervisionUI'
+[2023-05-22 01:14:20Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2023-05-22 01:14:20Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2023-05-22 01:14:20Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2023-05-22 01:14:20Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2023-05-22 01:14:20Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2023-05-22 01:14:20Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2023-05-22 01:14:20Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2023-05-22 01:14:20Z INFO ProcessInvokerWrapper] Updated oom_score_adj to 500 for PID: 121841.
+[2023-05-22 01:14:20Z INFO ProcessInvokerWrapper] Process started with process id 121841, waiting for process exit.
+[2023-05-22 01:14:20Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2023-05-22 01:14:20Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'cd814600-373f-5877-ac3c-6bf0127d9047', success rate: 1/1.
+[2023-05-22 01:14:20Z INFO JobServerQueue] Try to append 1 batches web console lines for record '8957de05-e134-5a72-57ac-df1ddef1a94f', success rate: 1/1.
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper] Finished process 121841 with exit code 1, and elapsed time 00:00:00.3414073.
+[2023-05-22 01:14:21Z INFO CreateStepSummaryCommand] Step Summary file (/home/saad/git/bytevision/githubactions-runner/_work/_temp/_runner_file_commands/step_summary_9e360ba5-7cc7-486a-85a8-0249fd46b900) is empty; skipping attachment upload
+[2023-05-22 01:14:21Z INFO StepsRunner] Step result: Failed
+[2023-05-22 01:14:21Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "docker/build-push-action",
+  "ref": "v2",
+  "type": "node12",
+  "stage": "Main",
+  "stepId": "8957de05-e134-5a72-57ac-df1ddef1a94f",
+  "stepContextName": "__docker_build-push-action",
+  "hasPreStep": false,
+  "hasPostStep": true,
+  "result": "failed",
+  "errorMessages": [
+    "The `save-state` command is deprecated and will be disabled soon. Please upgrade to using Environment Files. For more information see: https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/",
+    "Docker buildx is required. See https://github.com/docker/setup-buildx-action to set up buildx."
+  ],
+  "executionTimeInSeconds": 1,
+  "startTime": "2023-05-22T01:14:20.7273542Z",
+  "finishTime": "2023-05-22T01:14:21.0779447Z"
+}.
+[2023-05-22 01:14:21Z INFO StepsRunner] Update job result with current step result 'Failed'.
+[2023-05-22 01:14:21Z INFO StepsRunner] Current state: job state = 'Failed'
+[2023-05-22 01:14:21Z INFO StepsRunner] Processing step: DisplayName='Post Build and push Docker image'
+[2023-05-22 01:14:21Z INFO StepsRunner] Evaluating: always()
+[2023-05-22 01:14:21Z INFO StepsRunner] Result: true
+[2023-05-22 01:14:21Z INFO StepsRunner] Starting the step.
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Actions': '/home/saad/git/bytevision/githubactions-runner/_work/_actions'
+[2023-05-22 01:14:21Z INFO ActionManager] Load action that reference repository from '/home/saad/git/bytevision/githubactions-runner/_work/_actions/docker/build-push-action/v2'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Actions': '/home/saad/git/bytevision/githubactions-runner/_work/_actions'
+[2023-05-22 01:14:21Z INFO ActionManifestManager] Ignore action property author.
+[2023-05-22 01:14:21Z INFO ActionManifestManager] Ignore action property branding.
+[2023-05-22 01:14:21Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Build and push Docker images",
+  "description": "Build and push Docker images with Buildx",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 10,
+          "col": 3,
+          "lit": "add-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 13,
+          "col": 3,
+          "lit": "allow"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 16,
+          "col": 3,
+          "lit": "build-args"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 19,
+          "col": 3,
+          "lit": "build-contexts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 22,
+          "col": 3,
+          "lit": "builder"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 25,
+          "col": 3,
+          "lit": "cache-from"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 28,
+          "col": 3,
+          "lit": "cache-to"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 31,
+          "col": 3,
+          "lit": "cgroup-parent"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 34,
+          "col": 3,
+          "lit": "context"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 37,
+          "col": 3,
+          "lit": "file"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 40,
+          "col": 3,
+          "lit": "labels"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 43,
+          "col": 3,
+          "lit": "load"
+        },
+        "value": {
+          "type": 0,
+          "file": 4,
+          "line": 46,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 47,
+          "col": 3,
+          "lit": "network"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 50,
+          "col": 3,
+          "lit": "no-cache"
+        },
+        "value": {
+          "type": 0,
+          "file": 4,
+          "line": 53,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 54,
+          "col": 3,
+          "lit": "outputs"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 57,
+          "col": 3,
+          "lit": "platforms"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 60,
+          "col": 3,
+          "lit": "pull"
+        },
+        "value": {
+          "type": 0,
+          "file": 4,
+          "line": 63,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 64,
+          "col": 3,
+          "lit": "push"
+        },
+        "value": {
+          "type": 0,
+          "file": 4,
+          "line": 67,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 68,
+          "col": 3,
+          "lit": "secrets"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 71,
+          "col": 3,
+          "lit": "secret-files"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 74,
+          "col": 3,
+          "lit": "shm-size"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 77,
+          "col": 3,
+          "lit": "ssh"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 80,
+          "col": 3,
+          "lit": "tags"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 83,
+          "col": 3,
+          "lit": "target"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 86,
+          "col": 3,
+          "lit": "ulimit"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 4,
+          "line": 89,
+          "col": 3,
+          "lit": "github-token"
+        },
+        "value": {
+          "type": 3,
+          "file": 4,
+          "line": 91,
+          "col": 14,
+          "expr": "github.token"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node12",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2023-05-22 01:14:21Z INFO ActionManager] Action pre node.js file: N/A.
+[2023-05-22 01:14:21Z INFO ActionManager] Action node.js file: dist/index.js.
+[2023-05-22 01:14:21Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Temp': '/home/saad/git/bytevision/githubactions-runner/_work/_temp'
+[2023-05-22 01:14:21Z INFO ExecutionContext] Write event payload to /home/saad/git/bytevision/githubactions-runner/_work/_temp/_github_workflow/event.json
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Temp': '/home/saad/git/bytevision/githubactions-runner/_work/_temp'
+[2023-05-22 01:14:21Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2023-05-22 01:14:21Z INFO ActionManifestManager] Input 'add-hosts': default value evaluate result: ""
+[2023-05-22 01:14:21Z INFO ActionManifestManager] Input 'allow': default value evaluate result: ""
+[2023-05-22 01:14:21Z INFO ActionManifestManager] Input 'build-args': default value evaluate result: ""
+[2023-05-22 01:14:21Z INFO ActionManifestManager] Input 'build-contexts': default value evaluate result: ""
+[2023-05-22 01:14:21Z INFO ActionManifestManager] Input 'builder': default value evaluate result: ""
+[2023-05-22 01:14:21Z INFO ActionManifestManager] Input 'cache-from': default value evaluate result: ""
+[2023-05-22 01:14:21Z INFO ActionManifestManager] Input 'cache-to': default value evaluate result: ""
+[2023-05-22 01:14:21Z INFO ActionManifestManager] Input 'cgroup-parent': default value evaluate result: ""
+[2023-05-22 01:14:21Z INFO ActionManifestManager] Input 'file': default value evaluate result: ""
+[2023-05-22 01:14:21Z INFO ActionManifestManager] Input 'labels': default value evaluate result: ""
+[2023-05-22 01:14:21Z INFO ActionManifestManager] Input 'load': default value evaluate result: {
+  "type": 0,
+  "file": 4,
+  "line": 46,
+  "col": 14,
+  "lit": "false"
+}
+[2023-05-22 01:14:21Z INFO ActionManifestManager] Input 'network': default value evaluate result: ""
+[2023-05-22 01:14:21Z INFO ActionManifestManager] Input 'no-cache': default value evaluate result: {
+  "type": 0,
+  "file": 4,
+  "line": 53,
+  "col": 14,
+  "lit": "false"
+}
+[2023-05-22 01:14:21Z INFO ActionManifestManager] Input 'outputs': default value evaluate result: ""
+[2023-05-22 01:14:21Z INFO ActionManifestManager] Input 'platforms': default value evaluate result: ""
+[2023-05-22 01:14:21Z INFO ActionManifestManager] Input 'pull': default value evaluate result: {
+  "type": 0,
+  "file": 4,
+  "line": 63,
+  "col": 14,
+  "lit": "false"
+}
+[2023-05-22 01:14:21Z INFO ActionManifestManager] Input 'secrets': default value evaluate result: ""
+[2023-05-22 01:14:21Z INFO ActionManifestManager] Input 'secret-files': default value evaluate result: ""
+[2023-05-22 01:14:21Z INFO ActionManifestManager] Input 'shm-size': default value evaluate result: ""
+[2023-05-22 01:14:21Z INFO ActionManifestManager] Input 'ssh': default value evaluate result: ""
+[2023-05-22 01:14:21Z INFO ActionManifestManager] Input 'target': default value evaluate result: ""
+[2023-05-22 01:14:21Z INFO ActionManifestManager] Input 'ulimit': default value evaluate result: ""
+[2023-05-22 01:14:21Z INFO ActionManifestManager] Input 'github-token': default value evaluate result: {
+  "type": 0,
+  "file": 4,
+  "line": 91,
+  "col": 14,
+  "lit": "***"
+}
+[2023-05-22 01:14:21Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2023-05-22 01:14:21Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2023-05-22 01:14:21Z INFO ActionCommandManager] Register action command extension for command set-env
+[2023-05-22 01:14:21Z INFO ActionCommandManager] Register action command extension for command set-output
+[2023-05-22 01:14:21Z INFO ActionCommandManager] Register action command extension for command save-state
+[2023-05-22 01:14:21Z INFO ActionCommandManager] Register action command extension for command add-path
+[2023-05-22 01:14:21Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2023-05-22 01:14:21Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2023-05-22 01:14:21Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2023-05-22 01:14:21Z INFO ActionCommandManager] Register action command extension for command warning
+[2023-05-22 01:14:21Z INFO ActionCommandManager] Register action command extension for command error
+[2023-05-22 01:14:21Z INFO ActionCommandManager] Register action command extension for command notice
+[2023-05-22 01:14:21Z INFO ActionCommandManager] Register action command extension for command debug
+[2023-05-22 01:14:21Z INFO ActionCommandManager] Register action command extension for command group
+[2023-05-22 01:14:21Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2023-05-22 01:14:21Z INFO ActionCommandManager] Register action command extension for command echo
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Externals': '/home/saad/git/bytevision/githubactions-runner/externals'
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper] Starting process:
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper]   File name: '/home/saad/git/bytevision/githubactions-runner/externals/node12/bin/node'
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper]   Arguments: '"/home/saad/git/bytevision/githubactions-runner/_work/_actions/docker/build-push-action/v2/dist/index.js"'
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper]   Working directory: '/home/saad/git/bytevision/githubactions-runner/_work/conveyervisionUI/conveyervisionUI'
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper] Updated oom_score_adj to 500 for PID: 121912.
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper] Process started with process id 121912, waiting for process exit.
+[2023-05-22 01:14:21Z INFO JobServerQueue] Try to append 1 batches web console lines for record '8957de05-e134-5a72-57ac-df1ddef1a94f', success rate: 1/1.
+[2023-05-22 01:14:21Z INFO JobServerQueue] Try to append 1 batches web console lines for record '94d59720-4fe4-4a3e-a001-35f68a0c6035', success rate: 1/1.
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper] Finished process 121912 with exit code 0, and elapsed time 00:00:00.1461473.
+[2023-05-22 01:14:21Z INFO CreateStepSummaryCommand] Step Summary file (/home/saad/git/bytevision/githubactions-runner/_work/_temp/_runner_file_commands/step_summary_0b980dad-0944-452b-8a4d-bbc7a1fcc5f1) is empty; skipping attachment upload
+[2023-05-22 01:14:21Z INFO StepsRunner] Step result: 
+[2023-05-22 01:14:21Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "docker/build-push-action",
+  "ref": "v2",
+  "type": "node12",
+  "stage": "Post",
+  "stepId": "94d59720-4fe4-4a3e-a001-35f68a0c6035",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 1,
+  "startTime": "2023-05-22T01:14:21.0789444Z",
+  "finishTime": "2023-05-22T01:14:21.2351472Z"
+}.
+[2023-05-22 01:14:21Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2023-05-22 01:14:21Z INFO StepsRunner] Current state: job state = 'Failed'
+[2023-05-22 01:14:21Z INFO StepsRunner] Processing step: DisplayName='Post Login to Docker registry'
+[2023-05-22 01:14:21Z INFO StepsRunner] Evaluating: always()
+[2023-05-22 01:14:21Z INFO StepsRunner] Result: true
+[2023-05-22 01:14:21Z INFO StepsRunner] Starting the step.
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Actions': '/home/saad/git/bytevision/githubactions-runner/_work/_actions'
+[2023-05-22 01:14:21Z INFO ActionManager] Load action that reference repository from '/home/saad/git/bytevision/githubactions-runner/_work/_actions/docker/login-action/v1'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Actions': '/home/saad/git/bytevision/githubactions-runner/_work/_actions'
+[2023-05-22 01:14:21Z INFO ActionManifestManager] Ignore action property author.
+[2023-05-22 01:14:21Z INFO ActionManifestManager] Ignore action property branding.
+[2023-05-22 01:14:21Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Docker Login",
+  "description": "GitHub Action to login against a Docker registry",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 10,
+          "col": 3,
+          "lit": "registry"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 13,
+          "col": 3,
+          "lit": "username"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 16,
+          "col": 3,
+          "lit": "password"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 19,
+          "col": 3,
+          "lit": "ecr"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 21,
+          "col": 14,
+          "lit": "auto"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 23,
+          "col": 3,
+          "lit": "logout"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 25,
+          "col": 14,
+          "lit": "true"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node12",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2023-05-22 01:14:21Z INFO ActionManager] Action pre node.js file: N/A.
+[2023-05-22 01:14:21Z INFO ActionManager] Action node.js file: dist/index.js.
+[2023-05-22 01:14:21Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Temp': '/home/saad/git/bytevision/githubactions-runner/_work/_temp'
+[2023-05-22 01:14:21Z INFO ExecutionContext] Write event payload to /home/saad/git/bytevision/githubactions-runner/_work/_temp/_github_workflow/event.json
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Temp': '/home/saad/git/bytevision/githubactions-runner/_work/_temp'
+[2023-05-22 01:14:21Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2023-05-22 01:14:21Z INFO ActionManifestManager] Input 'ecr': default value evaluate result: {
+  "type": 0,
+  "file": 3,
+  "line": 21,
+  "col": 14,
+  "lit": "auto"
+}
+[2023-05-22 01:14:21Z INFO ActionManifestManager] Input 'logout': default value evaluate result: {
+  "type": 0,
+  "file": 3,
+  "line": 25,
+  "col": 14,
+  "lit": "true"
+}
+[2023-05-22 01:14:21Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2023-05-22 01:14:21Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2023-05-22 01:14:21Z INFO ActionCommandManager] Register action command extension for command set-env
+[2023-05-22 01:14:21Z INFO ActionCommandManager] Register action command extension for command set-output
+[2023-05-22 01:14:21Z INFO ActionCommandManager] Register action command extension for command save-state
+[2023-05-22 01:14:21Z INFO ActionCommandManager] Register action command extension for command add-path
+[2023-05-22 01:14:21Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2023-05-22 01:14:21Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2023-05-22 01:14:21Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2023-05-22 01:14:21Z INFO ActionCommandManager] Register action command extension for command warning
+[2023-05-22 01:14:21Z INFO ActionCommandManager] Register action command extension for command error
+[2023-05-22 01:14:21Z INFO ActionCommandManager] Register action command extension for command notice
+[2023-05-22 01:14:21Z INFO ActionCommandManager] Register action command extension for command debug
+[2023-05-22 01:14:21Z INFO ActionCommandManager] Register action command extension for command group
+[2023-05-22 01:14:21Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2023-05-22 01:14:21Z INFO ActionCommandManager] Register action command extension for command echo
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Externals': '/home/saad/git/bytevision/githubactions-runner/externals'
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper] Starting process:
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper]   File name: '/home/saad/git/bytevision/githubactions-runner/externals/node12/bin/node'
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper]   Arguments: '"/home/saad/git/bytevision/githubactions-runner/_work/_actions/docker/login-action/v1/dist/index.js"'
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper]   Working directory: '/home/saad/git/bytevision/githubactions-runner/_work/conveyervisionUI/conveyervisionUI'
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper] Updated oom_score_adj to 500 for PID: 121919.
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper] Process started with process id 121919, waiting for process exit.
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper] Finished process 121919 with exit code 0, and elapsed time 00:00:00.2196760.
+[2023-05-22 01:14:21Z INFO CreateStepSummaryCommand] Step Summary file (/home/saad/git/bytevision/githubactions-runner/_work/_temp/_runner_file_commands/step_summary_10772a33-7d46-4394-bf23-7958a0fd2443) is empty; skipping attachment upload
+[2023-05-22 01:14:21Z INFO StepsRunner] Step result: 
+[2023-05-22 01:14:21Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "docker/login-action",
+  "ref": "v1",
+  "type": "node12",
+  "stage": "Post",
+  "stepId": "3f804e5c-9b7d-44d8-b074-aaebc3c5b422",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 1,
+  "startTime": "2023-05-22T01:14:21.2356071Z",
+  "finishTime": "2023-05-22T01:14:21.4604968Z"
+}.
+[2023-05-22 01:14:21Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2023-05-22 01:14:21Z INFO StepsRunner] Current state: job state = 'Failed'
+[2023-05-22 01:14:21Z INFO StepsRunner] Processing step: DisplayName='Post Check out repository'
+[2023-05-22 01:14:21Z INFO StepsRunner] Evaluating: always()
+[2023-05-22 01:14:21Z INFO StepsRunner] Result: true
+[2023-05-22 01:14:21Z INFO StepsRunner] Starting the step.
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Actions': '/home/saad/git/bytevision/githubactions-runner/_work/_actions'
+[2023-05-22 01:14:21Z INFO ActionManager] Load action that reference repository from '/home/saad/git/bytevision/githubactions-runner/_work/_actions/actions/checkout/v2'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Actions': '/home/saad/git/bytevision/githubactions-runner/_work/_actions'
+[2023-05-22 01:14:21Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 50,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 53,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 56,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 58,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 61,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 62,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 71,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "true"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node12",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2023-05-22 01:14:21Z INFO ActionManager] Action pre node.js file: N/A.
+[2023-05-22 01:14:21Z INFO ActionManager] Action node.js file: dist/index.js.
+[2023-05-22 01:14:21Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Temp': '/home/saad/git/bytevision/githubactions-runner/_work/_temp'
+[2023-05-22 01:14:21Z INFO ExecutionContext] Write event payload to /home/saad/git/bytevision/githubactions-runner/_work/_temp/_github_workflow/event.json
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Work': '/home/saad/git/bytevision/githubactions-runner/_work'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Temp': '/home/saad/git/bytevision/githubactions-runner/_work/_temp'
+[2023-05-22 01:14:21Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2023-05-22 01:14:21Z INFO ActionManifestManager] Input 'repository': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 6,
+  "col": 14,
+  "lit": "conveyervision/conveyervisionUI"
+}
+[2023-05-22 01:14:21Z INFO ActionManifestManager] Input 'ref': default value evaluate result: ""
+[2023-05-22 01:14:21Z INFO ActionManifestManager] Input 'token': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 24,
+  "col": 14,
+  "lit": "***"
+}
+[2023-05-22 01:14:21Z INFO ActionManifestManager] Input 'ssh-key': default value evaluate result: ""
+[2023-05-22 01:14:21Z INFO ActionManifestManager] Input 'ssh-known-hosts': default value evaluate result: ""
+[2023-05-22 01:14:21Z INFO ActionManifestManager] Input 'ssh-strict': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 47,
+  "col": 14,
+  "lit": "true"
+}
+[2023-05-22 01:14:21Z INFO ActionManifestManager] Input 'persist-credentials': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 50,
+  "col": 14,
+  "lit": "true"
+}
+[2023-05-22 01:14:21Z INFO ActionManifestManager] Input 'path': default value evaluate result: ""
+[2023-05-22 01:14:21Z INFO ActionManifestManager] Input 'clean': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 55,
+  "col": 14,
+  "lit": "true"
+}
+[2023-05-22 01:14:21Z INFO ActionManifestManager] Input 'fetch-depth': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 58,
+  "col": 14,
+  "lit": "1"
+}
+[2023-05-22 01:14:21Z INFO ActionManifestManager] Input 'lfs': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 61,
+  "col": 14,
+  "lit": "false"
+}
+[2023-05-22 01:14:21Z INFO ActionManifestManager] Input 'submodules': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 70,
+  "col": 14,
+  "lit": "false"
+}
+[2023-05-22 01:14:21Z INFO ActionManifestManager] Input 'set-safe-directory': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 73,
+  "col": 14,
+  "lit": "true"
+}
+[2023-05-22 01:14:21Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2023-05-22 01:14:21Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2023-05-22 01:14:21Z INFO ActionCommandManager] Register action command extension for command set-env
+[2023-05-22 01:14:21Z INFO ActionCommandManager] Register action command extension for command set-output
+[2023-05-22 01:14:21Z INFO ActionCommandManager] Register action command extension for command save-state
+[2023-05-22 01:14:21Z INFO ActionCommandManager] Register action command extension for command add-path
+[2023-05-22 01:14:21Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2023-05-22 01:14:21Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2023-05-22 01:14:21Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2023-05-22 01:14:21Z INFO ActionCommandManager] Register action command extension for command warning
+[2023-05-22 01:14:21Z INFO ActionCommandManager] Register action command extension for command error
+[2023-05-22 01:14:21Z INFO ActionCommandManager] Register action command extension for command notice
+[2023-05-22 01:14:21Z INFO ActionCommandManager] Register action command extension for command debug
+[2023-05-22 01:14:21Z INFO ActionCommandManager] Register action command extension for command group
+[2023-05-22 01:14:21Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2023-05-22 01:14:21Z INFO ActionCommandManager] Register action command extension for command echo
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Externals': '/home/saad/git/bytevision/githubactions-runner/externals'
+[2023-05-22 01:14:21Z INFO JobServerQueue] Try to append 1 batches web console lines for record '3f804e5c-9b7d-44d8-b074-aaebc3c5b422', success rate: 1/1.
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper] Starting process:
+[2023-05-22 01:14:21Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'c1ebafe2-9e92-43f9-bc06-66c70886fb33', success rate: 1/1.
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper]   File name: '/home/saad/git/bytevision/githubactions-runner/externals/node12/bin/node'
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper]   Arguments: '"/home/saad/git/bytevision/githubactions-runner/_work/_actions/actions/checkout/v2/dist/index.js"'
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper]   Working directory: '/home/saad/git/bytevision/githubactions-runner/_work/conveyervisionUI/conveyervisionUI'
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper] Updated oom_score_adj to 500 for PID: 121941.
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper] Process started with process id 121941, waiting for process exit.
+[2023-05-22 01:14:21Z INFO AddMaskCommandExtension] Add new secret mask with length of 32
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-05-22 01:14:21Z INFO ProcessInvokerWrapper] Finished process 121941 with exit code 0, and elapsed time 00:00:00.2422130.
+[2023-05-22 01:14:21Z INFO CreateStepSummaryCommand] Step Summary file (/home/saad/git/bytevision/githubactions-runner/_work/_temp/_runner_file_commands/step_summary_a834df46-75a4-4cff-986c-15ea74b85961) is empty; skipping attachment upload
+[2023-05-22 01:14:21Z INFO StepsRunner] Step result: 
+[2023-05-22 01:14:21Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "actions/checkout",
+  "ref": "v2",
+  "type": "node12",
+  "stage": "Post",
+  "stepId": "c1ebafe2-9e92-43f9-bc06-66c70886fb33",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 1,
+  "startTime": "2023-05-22T01:14:21.4610391Z",
+  "finishTime": "2023-05-22T01:14:21.7101005Z"
+}.
+[2023-05-22 01:14:21Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2023-05-22 01:14:21Z INFO StepsRunner] Current state: job state = 'Failed'
+[2023-05-22 01:14:21Z INFO JobRunner] Finalize job.
+[2023-05-22 01:14:21Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'c1ebafe2-9e92-43f9-bc06-66c70886fb33', success rate: 1/1.
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Diag': '/home/saad/git/bytevision/githubactions-runner/_diag'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:21Z INFO HostContext] Well known directory 'Diag': '/home/saad/git/bytevision/githubactions-runner/_diag'
+[2023-05-22 01:14:21Z INFO JobExtension] Initialize Env context
+[2023-05-22 01:14:21Z INFO JobExtension] Initialize steps context
+[2023-05-22 01:14:21Z INFO JobExtension] Total accessible running process: 473.
+[2023-05-22 01:14:21Z INFO JobExtension] Inspecting process environment variables. PID: 60265 (kworker/u32:4-ext4-rsv-conversion)
+[2023-05-22 01:14:21Z INFO LinuxProcessExtensions] Read env from /proc/60265/environ
+[2023-05-22 01:14:21Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/60265/environ' is denied.
+[2023-05-22 01:14:21Z INFO JobExtension] Inspecting process environment variables. PID: 114308 (kworker/9:0-events)
+[2023-05-22 01:14:21Z INFO LinuxProcessExtensions] Read env from /proc/114308/environ
+[2023-05-22 01:14:21Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/114308/environ' is denied.
+[2023-05-22 01:14:21Z INFO JobExtension] Inspecting process environment variables. PID: 117554 (kworker/5:1-events)
+[2023-05-22 01:14:21Z INFO LinuxProcessExtensions] Read env from /proc/117554/environ
+[2023-05-22 01:14:21Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/117554/environ' is denied.
+[2023-05-22 01:14:21Z INFO JobExtension] Inspecting process environment variables. PID: 118774 (kworker/10:2-events)
+[2023-05-22 01:14:21Z INFO LinuxProcessExtensions] Read env from /proc/118774/environ
+[2023-05-22 01:14:21Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/118774/environ' is denied.
+[2023-05-22 01:14:21Z INFO JobExtension] Inspecting process environment variables. PID: 118903 (kworker/13:2-events)
+[2023-05-22 01:14:21Z INFO LinuxProcessExtensions] Read env from /proc/118903/environ
+[2023-05-22 01:14:21Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/118903/environ' is denied.
+[2023-05-22 01:14:21Z INFO JobExtension] Inspecting process environment variables. PID: 120213 (kworker/11:4-events)
+[2023-05-22 01:14:21Z INFO LinuxProcessExtensions] Read env from /proc/120213/environ
+[2023-05-22 01:14:21Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/120213/environ' is denied.
+[2023-05-22 01:14:21Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "complete_job",
+  "type": "runner",
+  "stage": "Post",
+  "stepId": "71cc682d-2bfb-4278-9c9a-54d76dc4dee0",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 1,
+  "startTime": "2023-05-22T01:14:21.7278806Z",
+  "finishTime": "2023-05-22T01:14:21.8263796Z"
+}.
+[2023-05-22 01:14:21Z INFO JobRunner] Job result after all job steps finish: Failed
+[2023-05-22 01:14:21Z INFO JobRunner] Completing the job execution context.
+[2023-05-22 01:14:21Z INFO JobRunner] Shutting down the job server queue.
+[2023-05-22 01:14:21Z INFO JobServerQueue] Fire signal to shutdown all queues.
+[2023-05-22 01:14:22Z INFO JobServerQueue] Try to upload 5 log files or attachments, success rate: 5/5.
+[2023-05-22 01:14:23Z INFO JobServerQueue] All queue process task stopped.
+[2023-05-22 01:14:23Z INFO JobServerQueue] Try to append 1 batches web console lines for record '71cc682d-2bfb-4278-9c9a-54d76dc4dee0', success rate: 1/1.
+[2023-05-22 01:14:23Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'cc9a95ae-b53c-5dc6-d946-f5dd67afb660', success rate: 1/1.
+[2023-05-22 01:14:23Z INFO JobServerQueue] Web console line queue drained.
+[2023-05-22 01:14:23Z INFO JobServerQueue] Uploading 2 files in one shot.
+[2023-05-22 01:14:23Z INFO JobServerQueue] Try to upload 2 log files or attachments, success rate: 2/2.
+[2023-05-22 01:14:23Z INFO JobServerQueue] File upload queue drained.
+[2023-05-22 01:14:23Z INFO JobServerQueue] Starting results-based upload queue...
+[2023-05-22 01:14:23Z INFO JobServerQueue] Results upload queue drained.
+[2023-05-22 01:14:24Z INFO JobServerQueue] Timeline update queue drained.
+[2023-05-22 01:14:24Z INFO JobServerQueue] Disposing job server ...
+[2023-05-22 01:14:24Z INFO JobServerQueue] Disposing results server ...
+[2023-05-22 01:14:24Z INFO JobServerQueue] All queue process tasks have been stopped, and all queues are drained.
+[2023-05-22 01:14:24Z INFO TempDirectoryManager] Cleaning runner temp folder: /home/saad/git/bytevision/githubactions-runner/_work/_temp
+[2023-05-22 01:14:24Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:14:24Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:14:24Z INFO HostContext] Well known directory 'Diag': '/home/saad/git/bytevision/githubactions-runner/_diag'
+[2023-05-22 01:14:24Z INFO HostContext] Well known config file 'Telemetry': '/home/saad/git/bytevision/githubactions-runner/_diag/.telemetry'
+[2023-05-22 01:14:24Z INFO JobRunner] Raising job completed event
+[2023-05-22 01:14:24Z INFO Worker] Job completed.

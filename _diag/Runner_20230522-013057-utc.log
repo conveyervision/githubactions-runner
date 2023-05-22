@@ -1,0 +1,163 @@
+[2023-05-22 01:30:57Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2023-05-22 01:30:57Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:30:57Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:30:57Z INFO HostContext] Well known config file 'Credentials': '/home/saad/git/bytevision/githubactions-runner/.credentials'
+[2023-05-22 01:30:57Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:30:57Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:30:57Z INFO HostContext] Well known config file 'Runner': '/home/saad/git/bytevision/githubactions-runner/.runner'
+[2023-05-22 01:30:57Z INFO Listener] Runner is built for Linux (X64) - linux-x64.
+[2023-05-22 01:30:57Z INFO Listener] RuntimeInformation: Linux 5.10.0-9-amd64 #1 SMP Debian 5.10.70-1 (2021-09-30).
+[2023-05-22 01:30:57Z INFO Listener] Version: 2.304.0
+[2023-05-22 01:30:57Z INFO Listener] Commit: 9ef4121b5b31ee5c03b7770288213d741081f747
+[2023-05-22 01:30:57Z INFO Listener] Culture: en-US
+[2023-05-22 01:30:57Z INFO Listener] UI Culture: en-US
+[2023-05-22 01:30:57Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:30:57Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:30:57Z INFO Listener] Validating directory permissions for: '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:30:57Z INFO CommandLineParser] Parse
+[2023-05-22 01:30:57Z INFO CommandLineParser] Parsing 1 args
+[2023-05-22 01:30:57Z INFO CommandLineParser] parsing argument
+[2023-05-22 01:30:57Z INFO CommandLineParser] HasArgs: False
+[2023-05-22 01:30:57Z INFO CommandLineParser] Adding Command: run
+[2023-05-22 01:30:57Z INFO Listener] Arguments parsed
+[2023-05-22 01:30:57Z INFO Runner] ExecuteCommand
+[2023-05-22 01:30:57Z INFO ConfigurationStore] currentAssemblyLocation: /home/saad/git/bytevision/githubactions-runner/bin/Runner.Listener.dll
+[2023-05-22 01:30:57Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:30:57Z INFO ConfigurationStore] binPath: /home/saad/git/bytevision/githubactions-runner/bin
+[2023-05-22 01:30:57Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:30:57Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:30:57Z INFO ConfigurationStore] RootFolder: /home/saad/git/bytevision/githubactions-runner
+[2023-05-22 01:30:57Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:30:57Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:30:57Z INFO HostContext] Well known config file 'Runner': '/home/saad/git/bytevision/githubactions-runner/.runner'
+[2023-05-22 01:30:57Z INFO ConfigurationStore] ConfigFilePath: /home/saad/git/bytevision/githubactions-runner/.runner
+[2023-05-22 01:30:57Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:30:57Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:30:57Z INFO HostContext] Well known config file 'Credentials': '/home/saad/git/bytevision/githubactions-runner/.credentials'
+[2023-05-22 01:30:57Z INFO ConfigurationStore] CredFilePath: /home/saad/git/bytevision/githubactions-runner/.credentials
+[2023-05-22 01:30:57Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:30:57Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:30:57Z INFO HostContext] Well known config file 'MigratedCredentials': '/home/saad/git/bytevision/githubactions-runner/.credentials_migrated'
+[2023-05-22 01:30:57Z INFO ConfigurationStore] MigratedCredFilePath: /home/saad/git/bytevision/githubactions-runner/.credentials_migrated
+[2023-05-22 01:30:57Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:30:57Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:30:57Z INFO HostContext] Well known config file 'Service': '/home/saad/git/bytevision/githubactions-runner/.service'
+[2023-05-22 01:30:57Z INFO ConfigurationStore] ServiceConfigFilePath: /home/saad/git/bytevision/githubactions-runner/.service
+[2023-05-22 01:30:57Z INFO CommandSettings] Flag 'help': 'False'
+[2023-05-22 01:30:57Z INFO CommandSettings] Flag 'version': 'False'
+[2023-05-22 01:30:57Z INFO CommandSettings] Flag 'commit': 'False'
+[2023-05-22 01:30:57Z INFO CommandSettings] Flag 'check': 'False'
+[2023-05-22 01:30:57Z INFO CommandSettings] Command 'configure': 'False'
+[2023-05-22 01:30:57Z INFO CommandSettings] Command 'remove': 'False'
+[2023-05-22 01:30:57Z INFO CommandSettings] Command 'warmup': 'False'
+[2023-05-22 01:30:57Z INFO ConfigurationManager] LoadSettings
+[2023-05-22 01:30:57Z INFO ConfigurationStore] IsConfigured()
+[2023-05-22 01:30:57Z INFO ConfigurationStore] IsConfigured: True
+[2023-05-22 01:30:57Z INFO ConfigurationManager] Is configured: True
+[2023-05-22 01:30:57Z INFO ConfigurationStore] Read setting file: 281 chars
+[2023-05-22 01:30:57Z INFO ConfigurationManager] Settings Loaded
+[2023-05-22 01:30:57Z INFO ConfigurationStore] IsServiceConfigured()
+[2023-05-22 01:30:57Z INFO ConfigurationStore] IsServiceConfigured: False
+[2023-05-22 01:30:57Z INFO CommandSettings] Command 'run': 'True'
+[2023-05-22 01:30:57Z INFO ConfigurationStore] IsConfigured()
+[2023-05-22 01:30:57Z INFO ConfigurationStore] IsConfigured: True
+[2023-05-22 01:30:57Z INFO ConfigurationManager] Is configured: True
+[2023-05-22 01:30:57Z INFO Runner] Could not parse the argument value '' for StartupType. Defaulting to Manual
+[2023-05-22 01:30:57Z INFO Runner] Set runner startup type - Manual
+[2023-05-22 01:30:57Z INFO CommandSettings] Flag 'once': 'False'
+[2023-05-22 01:30:57Z INFO CommandSettings] Flag 'once': 'False'
+[2023-05-22 01:30:57Z INFO Runner] RunAsync
+[2023-05-22 01:30:57Z INFO ConfigurationManager] LoadSettings
+[2023-05-22 01:30:57Z INFO ConfigurationStore] IsConfigured()
+[2023-05-22 01:30:57Z INFO ConfigurationStore] IsConfigured: True
+[2023-05-22 01:30:57Z INFO ConfigurationManager] Is configured: True
+[2023-05-22 01:30:57Z INFO ConfigurationManager] Settings Loaded
+[2023-05-22 01:30:57Z INFO MessageListener] {
+  "AgentId": 2,
+  "AgentName": "gensosekai",
+  "PoolId": 1,
+  "PoolName": "Default",
+  "ServerUrl": "https://pipelines.actions.githubusercontent.com/qVb8z3XvXyehsM4ndlAxQtVmS71JFLCKsjaMrhOAA1wKoy4DVO",
+  "GitHubUrl": "https://github.com/conveyervision",
+  "WorkFolder": "_work"
+}
+[2023-05-22 01:30:57Z INFO MessageListener] Loading Credentials
+[2023-05-22 01:30:57Z INFO ConfigurationStore] HasCredentials()
+[2023-05-22 01:30:57Z INFO ConfigurationStore] stored True
+[2023-05-22 01:30:57Z INFO CredentialManager] GetCredentialProvider
+[2023-05-22 01:30:57Z INFO CredentialManager] Creating type OAuth
+[2023-05-22 01:30:57Z INFO CredentialManager] Creating credential type: OAuth
+[2023-05-22 01:30:57Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:30:57Z INFO HostContext] Well known directory 'Root': '/home/saad/git/bytevision/githubactions-runner'
+[2023-05-22 01:30:57Z INFO HostContext] Well known config file 'RSACredentials': '/home/saad/git/bytevision/githubactions-runner/.credentials_rsaparams'
+[2023-05-22 01:30:57Z INFO RSAFileKeyManager] Loading RSA key parameters from file /home/saad/git/bytevision/githubactions-runner/.credentials_rsaparams
+[2023-05-22 01:30:57Z INFO MessageListener] Attempt to create session.
+[2023-05-22 01:30:57Z INFO MessageListener] Connecting to the Runner Server...
+[2023-05-22 01:30:57Z INFO RunnerServer] EstablishVssConnection
+[2023-05-22 01:30:57Z INFO RunnerServer] Establish connection with 100 seconds timeout.
+[2023-05-22 01:30:58Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2023-05-22 01:30:58Z INFO RunnerServer] EstablishVssConnection
+[2023-05-22 01:30:58Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2023-05-22 01:30:58Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2023-05-22 01:30:58Z INFO RunnerServer] EstablishVssConnection
+[2023-05-22 01:30:58Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2023-05-22 01:30:58Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2023-05-22 01:30:58Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2023-05-22 01:30:58Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2023-05-22 01:30:58Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2023-05-22 01:30:58Z INFO MessageListener] VssConnection created
+[2023-05-22 01:30:58Z INFO Terminal] WRITE LINE: 
+[2023-05-22 01:30:58Z INFO Terminal] WRITE LINE: 
+[2023-05-22 01:30:58Z INFO RSAFileKeyManager] Loading RSA key parameters from file /home/saad/git/bytevision/githubactions-runner/.credentials_rsaparams
+[2023-05-22 01:30:58Z INFO RSAFileKeyManager] Loading RSA key parameters from file /home/saad/git/bytevision/githubactions-runner/.credentials_rsaparams
+[2023-05-22 01:30:59Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2023-05-22 01:30:59Z INFO MessageListener] Session created.
+[2023-05-22 01:30:59Z INFO Terminal] WRITE LINE: Current runner version: '2.304.0'
+[2023-05-22 01:30:59Z INFO Terminal] WRITE LINE: 2023-05-22 01:30:59Z: Listening for Jobs
+[2023-05-22 01:30:59Z INFO JobDispatcher] Set runner/worker IPC timeout to 30 seconds.
+[2023-05-22 01:31:00Z INFO RSAFileKeyManager] Loading RSA key parameters from file /home/saad/git/bytevision/githubactions-runner/.credentials_rsaparams
+[2023-05-22 01:31:00Z INFO MessageListener] Message '4' received from session 'f38d5c67-d59b-49c4-96f8-eab84778b166'.
+[2023-05-22 01:31:00Z INFO Runner] Received job message of length 23662 from service, with hash '8e233e3bdf401ed3a8c726a479446574211c1d6f1693f66741b59baca2fe2424'
+[2023-05-22 01:31:00Z INFO JobDispatcher] Job request 4 for plan 37c47011-70f2-4845-9d0e-dd158e2af78b job cc9a95ae-b53c-5dc6-d946-f5dd67afb660 received.
+[2023-05-22 01:31:00Z INFO JobDispatcher] Pull OrchestrationId 37c47011-70f2-4845-9d0e-dd158e2af78b.build-and-push.__default from JWT claims
+[2023-05-22 01:31:00Z INFO Terminal] WRITE LINE: 2023-05-22 01:31:00Z: Running job: build-and-push
+[2023-05-22 01:31:00Z INFO JobDispatcher] Start renew job request 4 for job cc9a95ae-b53c-5dc6-d946-f5dd67afb660.
+[2023-05-22 01:31:00Z INFO JobDispatcher] Successfully renew job request 4, job is valid till 5/22/2023 1:41:00 AM
+[2023-05-22 01:31:00Z INFO HostContext] Well known directory 'Bin': '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:31:00Z INFO ProcessInvokerWrapper] Starting process:
+[2023-05-22 01:31:00Z INFO ProcessInvokerWrapper]   File name: '/home/saad/git/bytevision/githubactions-runner/bin/Runner.Worker'
+[2023-05-22 01:31:00Z INFO ProcessInvokerWrapper]   Arguments: 'spawnclient 106 109'
+[2023-05-22 01:31:00Z INFO ProcessInvokerWrapper]   Working directory: '/home/saad/git/bytevision/githubactions-runner/bin'
+[2023-05-22 01:31:00Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2023-05-22 01:31:00Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2023-05-22 01:31:00Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'True'
+[2023-05-22 01:31:00Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2023-05-22 01:31:00Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2023-05-22 01:31:00Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2023-05-22 01:31:00Z INFO ProcessInvokerWrapper]   High priority process: 'True'
+[2023-05-22 01:31:00Z INFO ProcessInvokerWrapper] Process started with process id 137663, waiting for process exit.
+[2023-05-22 01:31:00Z INFO JobDispatcher] Send job request message to worker for job cc9a95ae-b53c-5dc6-d946-f5dd67afb660.
+[2023-05-22 01:31:00Z INFO ProcessChannel] Sending message of length 23662, with hash '8e233e3bdf401ed3a8c726a479446574211c1d6f1693f66741b59baca2fe2424'
+[2023-05-22 01:31:00Z INFO JobNotification] Entering JobStarted Notification
+[2023-05-22 01:31:00Z INFO JobNotification] Entering StartMonitor
+[2023-05-22 01:32:00Z INFO JobDispatcher] Successfully renew job request 4, job is valid till 5/22/2023 1:42:00 AM
+[2023-05-22 01:32:07Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-05-22 01:32:07Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-05-22 01:32:07Z INFO ProcessInvokerWrapper] Finished process 137663 with exit code 100, and elapsed time 00:01:06.3092178.
+[2023-05-22 01:32:07Z INFO JobDispatcher] Worker finished for job cc9a95ae-b53c-5dc6-d946-f5dd67afb660. Code: 100
+[2023-05-22 01:32:07Z INFO JobDispatcher] finish job request for job cc9a95ae-b53c-5dc6-d946-f5dd67afb660 with result: Succeeded
+[2023-05-22 01:32:07Z INFO Terminal] WRITE LINE: 2023-05-22 01:32:07Z: Job build-and-push completed with result: Succeeded
+[2023-05-22 01:32:07Z INFO JobDispatcher] Stop renew job request for job cc9a95ae-b53c-5dc6-d946-f5dd67afb660.
+[2023-05-22 01:32:07Z INFO JobDispatcher] job renew has been cancelled, stop renew job request 4.
+[2023-05-22 01:32:07Z INFO JobNotification] Entering JobCompleted Notification
+[2023-05-22 01:32:07Z INFO JobNotification] Entering EndMonitor
+[2023-05-22 01:47:26Z INFO RSAFileKeyManager] Loading RSA key parameters from file /home/saad/git/bytevision/githubactions-runner/.credentials_rsaparams
+[2023-05-22 01:47:26Z INFO MessageListener] Message '5' received from session 'f38d5c67-d59b-49c4-96f8-eab84778b166'.
+[2023-05-22 01:47:26Z INFO Runner] Received job message of length 27261 from service, with hash 'bc80cec4347be56d633046773107625f41d7762e97013ffc46e3e981a81881b4'
+[2023-05-22 01:47:26Z INFO JobDispatcher] Job request 5 for plan 21e63ec7-e75e-40cd-acab-7c1826ae6fef job cc9a95ae-b53c-5dc6-d946-f5dd67afb660 received.
+[2023-05-22 01:47:26Z INFO JobDispatcher] Pull OrchestrationId 21e63ec7-e75e-40cd-acab-7c1826ae6fef.build-and-push.__default from JWT claims
+[2023-05-22 01:47:26Z INFO JobDispatcher] Job request cc9a95ae-b53c-5dc6-d946-f5dd67afb660 processed succeed.
+[2023-05-22 01:47:26Z INFO Terminal] WRITE LINE: 2023-05-22 01:47:26Z: Running job: build-and-push
+[2023-05-22 01:54:35Z INFO RSAFileKeyManager] Loading RSA key parameters from file /home/saad/git/bytevision/githubactions-runner/.credentials_rsaparams
+[2023-05-22 01:54:35Z INFO MessageListener] Message '6' received from session 'f38d5c67-d59b-49c4-96f8-eab84778b166'.
+[2023-05-22 01:54:35Z INFO JobDispatcher] Job cancellation request cc9a95ae-b53c-5dc6-d946-f5dd67afb660 received, cancellation timeout 5 minutes.

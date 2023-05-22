@@ -1,0 +1,9 @@
+﻿{
+  "agentId": 2,
+  "agentName": "gensosekai",
+  "poolId": 1,
+  "poolName": "Default",
+  "serverUrl": "https://pipelines.actions.githubusercontent.com/qVb8z3XvXyehsM4ndlAxQtVmS71JFLCKsjaMrhOAA1wKoy4DVO",
+  "gitHubUrl": "https://github.com/conveyervision",
+  "workFolder": "_work"
+}
